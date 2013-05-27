@@ -1,0 +1,23 @@
+#Test Data
+
+Post(firstUserPost):
+    book:          About the model layer
+    date:       2009-06-14
+    user_id:         bob
+    content:        The model has a central position in a Play! application. It is the domain-specific 
+                    representation of the information on which the application operates.
+                    
+                    
+Comment(c1):
+    user_id:         Guest
+    comment:        >
+                    You are right !
+    date:       2009-06-14
+    post_id:           firstBobPost
+    
+Comment(c2):
+    user_id:         Mike
+    comment:        >
+                    I knew that ...
+    date:       2009-06-15
+    post_id:           firstBobPost   

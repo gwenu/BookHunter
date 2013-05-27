@@ -1,0 +1,39 @@
+
+.header
+{
+text-align:center;
+}
+
+.logo
+{
+	display: inline;
+	
+}
+
+div.logo img
+{
+	height:70px;
+	width:70px;
+}
+
+div.search
+{
+display: inline;
+
+}
+
+div.search form
+{
+display: inline;
+}
+
+
+.login
+{
+display: inline;
+}
+
+.content h2
+{
+text-align:center;
+}

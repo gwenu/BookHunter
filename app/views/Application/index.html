@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+#{if frontPost}
+    <div class="post">
+        <h2 class="post-title">
+            <a href="#">${frontPost.postTitle}</a>
+        </h2>
+       </div>
+       
+        <div class="post-metadata">
+            <span class="post-author">by ${frontPost.postTitle}</span>
+        </div>
+#{/if}
+       
+#{else}
+    <div class="empty">
+        There is currently nothing to read here.
+    </div>
+#{/else}
