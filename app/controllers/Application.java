@@ -26,4 +26,20 @@ public class Application extends Controller {
     	
     	render(users);
     }
+    
+    public static void posts() {
+    	render();
+    }
+    
+    public static void registration() {
+    	render();
+    }
+    
+    public static void login() {
+    	render();
+    }
+    
+    public static void books() {
+    	render();
+    }
 }

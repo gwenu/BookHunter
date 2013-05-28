@@ -15,26 +15,17 @@ public class Comment extends Model {
 	
 	@Lob
 	private String comment;
-
-	@ManyToOne
-	private Post post;
+	
+	private Book book;
 
 	public Comment() {
 
 	}
 	
-	public Comment(Post post, User user, String comment) {
+	public Comment(Book book, User user, String comment) {
 		this.user = user;
 		this.date = new Date();
 		this.comment = comment;
-	}
-
-	public Post getPost() {
-		return post;
-	}
-
-	public void setPost(Post post) {
-		this.post = post;
 	}
 
 	public User getUser() {

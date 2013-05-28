@@ -1,39 +1,64 @@
-
-.header
-{
-text-align:center;
+/** Main layout **/
+#header {
+	text-align: center;
+	position: relative;
+	padding-bottom: 24px;
+	padding-top: 10px;
+	margin: auto;
+	width: 90%;
+	height: 70px;
+	display: block;
 }
 
-.logo
-{
-	display: inline;
-	
+#header .main_menu {
+	text-align: center;
+	font-size: 20px;
+	font-family: Verdana, sans-serif;
 }
 
-div.logo img
-{
-	height:70px;
-	width:70px;
+#header .main_menu img {
+	margin-left: 10px;
+	margin-right: 24px;
+	height: 70px;
+	width: 70px;
+	float: left;
 }
 
-div.search
-{
-display: inline;
-
+#header .main_menu a,form {
+	padding-top: 30px;
+	margin-right: 24px;
+	float: left;
 }
 
-div.search form
-{
-display: inline;
+#header .main_menu .login {
+	float: right;
+	width: 20%;
 }
 
-
-.login
-{
-display: inline;
+#page-content {
+	text-align: left;
+	position: relative;
+	padding-bottom: 24px;
+	padding-top: 10px;
+	margin: auto;
+	width: 90%;
+	display: block;
+	font-family:"Times New Roman",Times,serif;
 }
 
-.content h2
-{
-text-align:center;
+#page-content .content .login-form, .registration-form{ 
+	text-align: left;
+	float:none;
 }
+
+#footer {
+	text-align: left;
+	position: relative;
+	padding-bottom: 24px;
+	padding-top: 10px;
+	margin: auto;
+	width: 90%;
+	height: 50px;
+	display: block;
+}
+

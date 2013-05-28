@@ -1,0 +1,50 @@
+#{extends 'main.html' /} #{set title:'Registration | BookHunter' /}
+
+<div id="header">
+	<div class="main_menu">
+		<img src="public/images/logo.jpg" alt="Logo"></img> <a href="/books">Books</a>
+		<a href="/peoples">Peoples</a>
+		<form action="" method="get">
+			<input type="text" name="fsearch"> <input type="submit"
+				value="Submit"> &nbsp;
+		</form>
+
+		<div class="login">
+			<a href="/login">Log in</a> <a href="/registration">Registration</a>
+		</div>
+	</div>
+</div>
+
+
+<div id="page-content">
+<h2>Registration</h2>
+	<form class="registration-form" method="post">
+		<ul class="items">
+			<li class="item"><span class="caption">Name</span> <input
+				class="field" type="text" required="required" tabindex="1"
+				placeholder="name" name="first_name"></li>
+			<li class="item"><span class="caption">Surname</span> <input
+				class="field" type="text" required="required" tabindex="2"
+				placeholder="surname" name="surname"></li>
+			<li class="item"><span class="caption">Sex</span> <select
+				class="field" required="required" tabindex="3" name="sex">
+					<option value="m">Male</option>
+					<option value="f">Female</option>
+			</select></li>
+			<li class="item"><span class="caption">Login</span> <input
+				class="field" type="text" required="required" tabindex="4"
+				placeholder="login" name="login"></li>
+			<li class="item"><span class="caption">Password</span> <input
+				class="field" type="password" required="required" tabindex="5"
+				name="password"></li>
+			<li class="item"><span class="caption">Confirm password</span> <input
+				class="field" type="password" required="required" tabindex="6"
+				name="confirm-password"></li>
+		</ul>
+	</form>
+</div>
+
+<div id="footer">
+	<a href="">Private Policy</a> <a href="">About</a> &copy BookHunter
+	2013
+</div>

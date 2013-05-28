@@ -13,105 +13,87 @@ public class BasicTest extends UnitTest {
 	}
 
 	@Test
-	public void createAndRetrieveBook() {
-		// Create a new book and save it
-		new Book("Title1", "Author1", "Description1").save();
+	public void createAndRetrieveAuthor() {
+		// Create a new author and save to DB
+		new Author("Author1", "InfAboutAuthor").save();
 
-		// Retrieve the book with author Author1
-		Book book1 = Book.find("byAuthor", "Author1").first();
+		// Retrive information about author 'Author1'
+		Author author = Author.find("byAuthorFullName", "Author1").first();
+
+		// Test
+		assertNotNull(author);
+		assertEquals("Author1", author.getAuthorName());
+		assertEquals("InfAboutAuthor", author.getInfo());
+	}
+
+	@Test
+	public void createAndRetrieveBook() {
+		// Create a new author and save to DB
+		Author author = new Author("Author_for_book", "InfAboutAuthor").save();
+
+		// Create a new book and save it
+		new Book(author, "Title1", "Description1").save();
+
+		// Retrieve the book by title
+		Book book1 = Book.find("byTitle", "Title1").first();
 
 		// Test
 		assertNotNull(book1);
+		assertEquals(author, book1.getAuthor());
 		assertEquals("Title1", book1.getTitle());
+		assertEquals("Description1", book1.getDescription());
+
 	}
 
 	@Test
-	public void createPost() {
+	public void createAndRetrieveComment() {
+		// Create a new author and save to DB
+		Author author = new Author("Author_for_comment", "InfAboutAuthor").save();
+
 		// Create a new user and book and save it
 		User user = new User("username", "password", "inf").save();
-		Book book = new Book("Title2", "Author2", "Description2").save();
-
-		// Create a new post
-		new Post(book, user, "PostTitle", "Content").save();
-
-		// Test that the post has been created
-		assertEquals(1, Post.count());
-
-		// Retrieve all posts created by User
-		List<Post> userPosts = Post.find("byUser", user).fetch();
-
-		// Tests
-		assertEquals(1, userPosts.size());
-		Post firstPost = userPosts.get(0);
-		assertNotNull(firstPost);
-		assertEquals(user, firstPost.getUser());
-		// assertEquals(book, firstPost.getBook());
-		assertEquals("Content", firstPost.getContent());
-		assertNotNull(firstPost.getDate());
-	}
-
-	@Test
-	public void postComments() {
-		// Create a new user and book and save it
-		User user = new User("username_c", "password_c", "inf_c").save();
-		User user_p = new User("username_p", "password_p", "inf_p").save();
-		Book book = new Book("Title_c", "Author_c", "Description_c").save();
-
-		// Create a new post
-		Post post = new Post(book, user_p, "PostTitle_c", "Content_c").save();
+		Book book = new Book(author, "Title_c", "Description_c").save();
 
 		// Post a first comment
-		new Comment(post, user, "Content_comment").save();
-		new Comment(post, user, "Content_comment2").save();
+		new Comment(book, user, "Content_comment").save();
+		new Comment(book, user, "Content_comment2").save();
 
 		// Retrieve all comments
-		List<Comment> userPostComments = Comment.find("byUser", user).fetch();
+		List<Comment> userComments = Comment.find("byUser", user).fetch();
 
 		// Tests
-		assertEquals(2, userPostComments.size());
+		assertEquals(2, userComments.size());
 
-		Comment firstComment = userPostComments.get(0);
+		Comment firstComment = userComments.get(0);
 		assertNotNull(firstComment);
 		assertEquals("Content_comment", firstComment.getComment());
 
-		Comment secondComment = userPostComments.get(1);
+		Comment secondComment = userComments.get(1);
 		assertNotNull(secondComment);
 		assertEquals("Content_comment2", secondComment.getComment());
 	}
 
 	@Test
 	public void useTheCommentsRelation() {
-		// Create a new user and book and save it
-		User user = new User("username_c", "password_c", "inf_c").save();
-		User user_p = new User("username_p", "password_p", "inf_p").save();
-		Book book = new Book("Title_c", "Author_c", "Description_c").save();
-
-		// Create a new post
-		Post post = new Post(book, user_p, "PostTitle_c", "Content_c").save();
-
-		// Post a first comment
-		post.addComment(user, "Content1");
-		post.addComment(user, "Content2");
+		// Create a new user, author and book and save it
+		Author author = new Author("Author_commnet_ralation", "InfAboutAuthor").save();
+		User user = new User("username_cr", "password_cr", "inf_cr").save();
+		Book book = new Book(author, "Title_c", "Description_c").save();
+		
+		new Comment(book, user, "Content_comment3").save();
+		new Comment(book, user, "Content_comment4").save();
 
 		// Count things
-		assertEquals(2, User.count());
-		assertEquals(1, Post.count());
+		assertEquals(1, User.count());
 		assertEquals(2, Comment.count());
 
-		// Retrieve Bob's post
-		post = Post.find("byUser", user_p).first();
-		assertNotNull(post);
-
-		// Navigate to comments
-		assertEquals(2, post.comments.size());
-		assertEquals("Content1", post.comments.get(0).getComment());
-
-		// Delete the post
-		post.delete();
-
+		List<Comment> userComments = Comment.find("byUser", user).fetch();
+		assertNotNull(userComments);
+		
+		userComments.get(0).delete();
+		
 		// Check that all comments have been deleted
-		assertEquals(2, User.count());
-		assertEquals(0, Post.count());
-		assertEquals(0, Comment.count());
+		assertEquals(1, User.count());
+		assertEquals(1, Comment.count());
 	}
 }
