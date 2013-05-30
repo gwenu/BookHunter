@@ -1,24 +1,9 @@
 #{extends 'main.html' /} #{set title:'Login | BookHunter' /}
 
-<div id="header">
-	<div class="main_menu">
-		<img src="public/images/logo.jpg" alt="Logo"></img> <a href="/books">Books</a>
-		<a href="/peoples">Peoples</a>
-		<form action="" method="get">
-			<input type="text" name="fsearch"> <input type="submit"
-				value="Submit"> &nbsp;
-		</form>
-
-		<div class="login">
-			<a href="/login">Log in</a> <a href="/registration">Registration</a>
-		</div>
-	</div>
-</div>
-
 <div id="page-content">
-	<h2>Login page</h2>
+	<h2>&{'login_title'}</h2>
 	<div class="content">
-		<form class="login-form" method="post">
+		#{form @Application.login(), id:'login_form'}
 			<ul class="items">
 				<li class="item"><span class="caption">Login</span> <input
 					class="field" type="text" required="required" tabindex="1"
@@ -27,13 +12,8 @@
 					class="field" type="password" required="required" tabindex="2"
 					placeholder="password" name="password"></li>
 			</ul>
-		</form>
+		#{/form}
 
-		<a href="">Registration</a> <a href="">Password recover</a>
+		<a href="">&{'login_registration_link'}</a> <a href="">&{'login_passRecover_link'}</a>
 	</div>
-</div>
-
-<div id="footer">
-	<a href="">Private Policy</a> <a href="">About</a> &copy BookHunter
-	2013
 </div>

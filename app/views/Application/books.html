@@ -1,66 +1,11 @@
 #{extends 'main.html' /} #{set title:'Books list | BookHunter' /}
 
-<div id="header">
-	<div class="main_menu">
-		<img src="public/images/logo.jpg" alt="Logo"></img> <a href="/books">Books</a>
-		<a href="/peoples">Peoples</a>
-		<form action="" method="get">
-			<input type="text" name="fsearch"> <input type="submit"
-				value="Submit"> &nbsp;
-		</form>
-
-		<div class="login">
-			<a href="/login">Log in</a> <a href="/registration">Registration</a>
-		</div>
-	</div>
-</div>
-
 <div id="page-content">
-	<h2>Books list</h2>
+	<h2>&{'books_title'}</h2>
 
-	<div id="buttons">
-
-		<div class="outer">
-			<div id="seven" class="button">7</div>
-		</div>
-
-		<div class="outer">
-			<div id="eight" class="button">8</div>
-		</div>
-
-		<div class="outer">
-			<div id="nine" class="button">9</div>
-		</div>
-
-		<div class="outer">
-			<div id="four" class="button">4</div>
-		</div>
-
-		<div class="outer">
-			<div id="five" class="button">5</div>
-		</div>
-
-		<div class="outer">
-			<div id="six" class="button">6</div>
-		</div>
-
-		<div class="outer">
-			<div id="one" class="button">1</div>
-		</div>
-
-		<div class="outer">
-			<div id="two" class="button">2</div>
-		</div>
-
-		<div class="outer">
-			<div id="three" class="button">3</div>
-		</div>
-
-	</div>
+	#{if booksList} #{list items:booksList, as:'book'}
+	<div class="books-list">${book.title} ${book.description}</div>
+	#{/list} #{/if}
 </div>
 
-<div id="footer">
-	<a href="">Private Policy</a> <a href="">About</a> &copy BookHunter
-	2013
-</div>
 

@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>#{get 'title' /}</title>
-        <meta charset="${_response_encoding}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
-        #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/logo.jpg'}">
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        #{get 'moreScripts' /}
-    </head>
-    <body>
-        #{doLayout /}
-    </body>
+<head>
+<title>#{get 'title' /}</title>
+<meta charset="${_response_encoding}">
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/main.css'}">
+#{get 'moreStyles' /}
+<link rel="shortcut icon" type="image/png"
+	href="@{'/public/images/logo.jpg'}">
+<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"
+	type="text/javascript" charset="${_response_encoding}"></script>
+#{get 'moreScripts' /}
+</head>
+<body>
+	<div id="header">
+		<div class="main_menu">
+			<a href="/"><img src="public/images/logo.jpg" alt="Logo"></img></a>
+			<div class="search-sections">
+				<a href="/books">&{'header_books_link'}</a> <a href="/users">&{'header_users_link'}</a>
+				#{form @Application.search()} <input type="text" name="fsearch">
+				<input type="submit" value="Submit"> &nbsp; #{/form}
+
+				<div class="login">
+					<a href="/login">&{'header_login_link'}</a> <a href="/registration">&{'header_registration_link'}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	#{doLayout /}
+
+	<div id="footer">
+		<a href="">&{'footer_prPolicy_link'}</a> <a href="">&{'footer_about_link'}</a>
+		&copy &{'footer_copyright'}
+
+	</div>
+</body>
 </html>

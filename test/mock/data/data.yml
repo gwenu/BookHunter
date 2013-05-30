@@ -1,0 +1,57 @@
+# Test data
+
+User(user1):
+      username: User1
+      password: pass1
+      userInf: Inf1
+      
+Author(second):
+     fullName: Second
+     info: InfAboutAuthor2
+
+Author(third):
+     fullName: Third
+     info: InfAboutAuthor3
+
+Author(fourAuthor):
+     fullName: Fours
+     info: inf
+ 
+Author(fifthAuthor):
+     fullName: Fifth
+     info: InfAboutAuthor5
+ 
+Book(firstBook):
+     author: second
+     title: Title1
+     description: Description1 
+     
+Book(book2):
+      author: fifthAuthor
+      title: Title2
+      description: Description2
+ 
+Comment(comment1):
+      book: book2
+      user: user1
+      date: 2013-05-29
+      comment: comment 1 book 2
+                  
+Comment(comment2):
+      book: book2
+      user: user1
+      date: 2013-05-30
+      comment: comment 2 book 2
+      
+Comment(comment3):
+      book: book2
+      user: user1
+      date: 2013-05-29
+      comment: comment 3 book 2
+                  
+Comment(comment4):
+      book: book2
+      user: user1
+      date: 2013-05-30
+      comment: comment 4 book 2
+      

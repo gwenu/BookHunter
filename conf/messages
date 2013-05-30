@@ -1,3 +1,34 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+
+#Header
+header_books_link=Books
+header_users_link=Users
+header_login_link=Log In
+header_registration_link=Registration
+
+#Footer
+footer_prPolicy_link=Private Policy
+footer_about_link=About 
+footer_copyright=BookHunter 2013
+
+#Index page
+index_title=A few words about BookHunter
+
+#Books page
+books_title=Books list
+
+#Users page
+users_title=Users
+
+#Login page
+login_title=Login page
+login_registration_link=Registration
+login_passRecover_link=Password recover
+
+#Registration page
+registration_title=Registration
+
+#Error message
+

@@ -10,18 +10,14 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-//    	Post frontPost = Post.find("order by date desc").first();
-//        List<Post> olderPosts = Post.find(
-//            "order by date desc"
-//        ).from(1).fetch(10);
-//        render(frontPost, olderPosts);
+    	render();
     }
     
     public static void about() {
     	render();
     }
     
-    public static void peoples() {
+    public static void users() {
     	List<User> users = User.find("order by username").fetch();
     	
     	render(users);
@@ -40,6 +36,11 @@ public class Application extends Controller {
     }
     
     public static void books() {
-    	render();
+    	List<Book> booksList = Book.findAll();
+    	render(booksList);
+    }
+    
+    public static void search(){
+    	
     }
 }

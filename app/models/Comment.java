@@ -9,6 +9,8 @@ import play.db.jpa.Model;
 @Entity
 public class Comment extends Model {
 
+	private Book book;
+	
 	@ManyToOne
 	private User user;
 	private Date date;
@@ -16,13 +18,12 @@ public class Comment extends Model {
 	@Lob
 	private String comment;
 	
-	private Book book;
-
 	public Comment() {
 
 	}
 	
 	public Comment(Book book, User user, String comment) {
+		this.book = book;
 		this.user = user;
 		this.date = new Date();
 		this.comment = comment;

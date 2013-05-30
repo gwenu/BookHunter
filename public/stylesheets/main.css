@@ -25,14 +25,18 @@
 }
 
 #header .main_menu a,form {
-	padding-top: 30px;
 	margin-right: 24px;
 	float: left;
 }
 
+#header .main_menu .search-sections{
+	padding-top: 30px;
+}
+	
 #header .main_menu .login {
 	float: right;
 	width: 20%;
+	visibility:hidden;
 }
 
 #page-content {
@@ -49,6 +53,13 @@
 #page-content .content .login-form, .registration-form{ 
 	text-align: left;
 	float:none;
+}
+
+.books-list{
+    display: block;
+    width: 25%;
+    float: left;
+    background-color:#e0ffff;
 }
 
 #footer {

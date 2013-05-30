@@ -1,0 +1,10 @@
+#{extends 'main.html' /} #{set title:'Peoples list | BookHunter' /}
+
+<div id="page-content">
+<h2>&{'users_title'}</h2>
+
+#{if users}
+Username: ${users.username}
+UserInf: ${users.userInf}
+#{/if}
+</div>

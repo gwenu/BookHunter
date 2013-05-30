@@ -6,9 +6,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class User extends Model {
-	
-//	@Id
-//	private Long id;
+
 	private String username;
 	private String password;
 	private String userInf;

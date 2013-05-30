@@ -3,9 +3,9 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.about
+GET     /                                       Application.index
 GET     /about                                  Application.about
-GET     /peoples                                Application.peoples
+GET     /users                                  Application.users
 GET     /posts                                  Application.posts
 GET     /registration                           Application.registration
 GET     /login                                  Application.login

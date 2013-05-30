@@ -9,24 +9,24 @@ import play.db.jpa.Model;
 @Entity
 public class Author extends Model {
 
-	private String authorFullName;
+	private String fullName;
 	private String info;
 	
 	public Author(){
 		
 	}
 	
-	public Author(String authorFullName, String info){
-		this.authorFullName = authorFullName;
+	public Author(String fullName, String info){
+		this.fullName = fullName;
 		this.info = info;
 	}
 
 	public String getAuthorName() {
-		return authorFullName;
+		return fullName;
 	}
 
-	public void setAuthorName(String authorName) {
-		this.authorFullName = authorName;
+	public void setAuthorName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getInfo() {

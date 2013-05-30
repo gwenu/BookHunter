@@ -1,7 +1,29 @@
 *{ You can use plain selenium command using the selenium tag }*
 
 #{selenium}
+ clearSession()
+ 
     // Open the home page, and check that no error occured
     open('/')
+    waitForPageToLoad(1000)
     assertNotTitle('Application error')
+    
+    // Open the home page, and check that page title is correct
+    assertTitle('Home | BookHunter')
+    
+    // Check that the content about BookHunter is present
+    assertTextPresent('A few words about BookHunter')
+    assertTextPresent('BookHunter is service that allow...')
+    assertTextPresent('Add read books')
+    assertTextPresent('Forming list "should be read"')
+    
+    // Check that the footer is present
+    assertTextPresent('Private Policy')
+    assertTextPresent('About')
+    assertTextPresent('&copy BookHunter')
+
+	//Check header's links
+	clickAndWait('link=Books')
+	assertTextPresent('Books list')
+	
 #{/selenium}

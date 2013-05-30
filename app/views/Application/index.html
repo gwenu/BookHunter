@@ -1,20 +1,17 @@
-#{extends 'main.html' /}
-#{set title:'Home' /}
- 
-#{if frontPost}
-    <div class="post">
-        <h2 class="post-title">
-            <a href="#">${frontPost.postTitle}</a>
-        </h2>
-       </div>
-       
-        <div class="post-metadata">
-            <span class="post-author">by ${frontPost.postTitle}</span>
-        </div>
-#{/if}
-       
-#{else}
-    <div class="empty">
-        There is currently nothing to read here.
-    </div>
-#{/else}
+#{extends 'main.html' /} 
+#{set title:'Home | BookHunter' /}
+
+<div id="page-content">
+	<div class="content">
+		<h2>&{'index_title'}</h2>
+		BookHunter is service that allow...
+		<ul>
+			<li>Add read books</li>
+			<li>Forming list "should be read"</li>
+			<li>Forming list "I have read"</li>
+			<li>Forming list "I have"</li>
+			<li>Forming lists by tags</li>
+		</ul>
+	</div>
+</div>
+
