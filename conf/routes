@@ -5,11 +5,11 @@
 # Home page
 GET     /                                       Application.index
 GET     /about                                  Application.about
-GET     /users                                  Application.users
+GET     /users                                  Users.users
 GET     /posts                                  Application.posts
 GET     /registration                           Application.registration
 GET     /login                                  Application.login
-GET     /books                                  Application.books
+GET     /books                                  Books.books
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

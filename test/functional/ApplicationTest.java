@@ -1,5 +1,9 @@
 package functional;
+import java.util.List;
+
 import org.junit.*;
+import org.junit.Before;
+
 import play.test.*;
 import play.mvc.*;
 import play.mvc.Http.*;
@@ -7,6 +11,12 @@ import models.*;
 
 public class ApplicationTest extends FunctionalTest {
 
+	@Before
+	public void setup() {
+		Fixtures.deleteAllModels();
+		Fixtures.loadModels("/mock/data/data.yml");
+	}
+	
     @Test
     public void testThatIndexPageWorks() {
         Response response = GET("/");
@@ -14,5 +24,4 @@ public class ApplicationTest extends FunctionalTest {
         assertContentType("text/html", response);
         assertCharset(play.Play.defaultWebEncoding, response);
     }
-    
 }

@@ -21,11 +21,11 @@ public class Author extends Model {
 		this.info = info;
 	}
 
-	public String getAuthorName() {
+	public String getFullName() {
 		return fullName;
 	}
 
-	public void setAuthorName(String fullName) {
+	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
 

@@ -55,21 +55,30 @@
 	float:none;
 }
 
-.books-list{
+.list{
     display: block;
-    width: 25%;
+    width: 50%;
     float: left;
-    background-color:#e0ffff;
+    padding-bottom:25px;
+}
+
+.list img{
+	height: 70px;
+	width: 70px;
+	margin-right: 25px;
+	vertical-align: middle;
+	float:left;
+}
+.list .list-item{
+	display: table-row;
+	vertical-align: middle;
 }
 
 #footer {
 	text-align: left;
-	position: relative;
-	padding-bottom: 24px;
-	padding-top: 10px;
-	margin: auto;
+	margin: 30px 100px;
 	width: 90%;
 	height: 50px;
-	display: block;
+	display: inline-block;
 }
 

@@ -1,0 +1,13 @@
+#{extends 'main.html' /} #{set title:'Peoples list | BookHunter' /}
+
+<div id="page-content">
+	<h2>&{'users_title'}</h2>
+
+	#{paginate.list items:paginatorUsers, as:'user'}
+	<div class="list">
+		<img src="@{Application.image(user.getImageName())}" /> 
+		<span class="list-item">Username: ${user.username}</span> 
+		<span class="list-item">UserInf: ${user.userInf}</span>
+	</div>
+	#{/paginate.list} #{paginate.controls items:paginatorUsers /}
+</div>

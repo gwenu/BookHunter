@@ -1,0 +1,16 @@
+#{extends 'main.html' /} #{set title:'Books list | BookHunter' /}
+
+<div id="page-content">
+	<h2>&{'books_title'}</h2>
+
+	#{paginate.list items:paginatorBooks, as:'book'}
+	<div class="list">
+		<img src="@{Application.image(book.getImageName())}" /> 
+		<span class="list-item">Author</span> 
+		<span class="list-item">${book.title}</span>
+		<span class="list-item">${book.description}</span>
+	</div>
+	#{/paginate.list} #{paginate.controls items:paginatorBooks /}
+</div>
+
+

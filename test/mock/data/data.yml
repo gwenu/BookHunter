@@ -4,7 +4,24 @@ User(user1):
       username: User1
       password: pass1
       userInf: Inf1
+      imageName: userpic1.jpg
       
+User(user2):
+      username: User2
+      password: pass2
+      userInf: Inf2
+      imageName: userpic2.jpg
+      
+User(user3):
+      username: User3
+      password: pass3
+      userInf: Inf3
+      imageName: userpic3.jpg
+
+Author(first):
+     fullName: First
+     info: InfAboutAuthor1
+     
 Author(second):
      fullName: Second
      info: InfAboutAuthor2
@@ -21,37 +38,75 @@ Author(fifthAuthor):
      fullName: Fifth
      info: InfAboutAuthor5
  
-Book(firstBook):
+Book(book1):
      author: second
      title: Title1
-     description: Description1 
+     description: Description1
+     imageName: book1_front_page.jpeg 
      
 Book(book2):
       author: fifthAuthor
       title: Title2
       description: Description2
+      imageName: book2_front_page.jpeg
+
+Book(book3):
+     author: third
+     title: Title3
+     description: Description3
+     imageName: book3_front_page.jpeg 
+     
+Book(book4):
+      author: fourAuthor
+      title: Title4
+      description: Description4
+      imageName: book4_front_page.jpeg
+      
+Book(book5):
+     author: second
+     title: Title5
+     description: Description5
+     imageName: book5_front_page.jpeg
+     
+Book(book6):
+      author: fifthAuthor
+      title: Title6
+      description: Description6
+      imageName: book6_front_page.jpeg
+
+Book(book7):
+     author: third
+     title: Title7
+     description: Description7
+     imageName: book7_front_page.jpeg 
+     
+Book(book8):
+      author: fourAuthor
+      title: Title8
+      description: Description8
+      imageName: book8_front_page.jpeg
  
 Comment(comment1):
       book: book2
       user: user1
       date: 2013-05-29
-      comment: comment 1 book 2
+      content: comment 1 book 2
                   
 Comment(comment2):
       book: book2
       user: user1
       date: 2013-05-30
-      comment: comment 2 book 2
+      content: comment 2 book 2
       
 Comment(comment3):
       book: book2
       user: user1
       date: 2013-05-29
-      comment: comment 3 book 2
+      content: comment 3 book 2
                   
 Comment(comment4):
       book: book2
       user: user1
       date: 2013-05-30
-      comment: comment 4 book 2
+      content: comment 4 book 2
       

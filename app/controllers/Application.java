@@ -3,44 +3,33 @@ package controllers;
 import play.*;
 import play.mvc.*;
 
+import java.io.File;
 import java.util.*;
+
+import controllers.utils.Constants;
 
 import models.*;
 
 public class Application extends Controller {
 
-    public static void index() {
-    	render();
-    }
-    
-    public static void about() {
-    	render();
-    }
-    
-    public static void users() {
-    	List<User> users = User.find("order by username").fetch();
-    	
-    	render(users);
-    }
-    
-    public static void posts() {
-    	render();
-    }
-    
-    public static void registration() {
-    	render();
-    }
-    
-    public static void login() {
-    	render();
-    }
-    
-    public static void books() {
-    	List<Book> booksList = Book.findAll();
-    	render(booksList);
-    }
-    
-    public static void search(){
-    	
-    }
+	public static void index() {
+		render();
+	}
+
+	public static void about() {
+		render();
+	}
+
+	public static void posts() {
+		render();
+	}
+
+	public static void search() {
+
+	}
+	
+	public static void image(String imageName) {
+		File file = new File(Constants.imagesPath + imageName);
+		renderBinary(file);
+	}
 }

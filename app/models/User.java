@@ -10,6 +10,7 @@ public class User extends Model {
 	private String username;
 	private String password;
 	private String userInf;
+	private String imageName;
 
 	public User() {
 
@@ -43,5 +44,13 @@ public class User extends Model {
 
 	public void setUserInf(String userInf) {
 		this.userInf = userInf;
+	}
+	
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 }
