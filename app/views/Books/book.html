@@ -1,0 +1,10 @@
+#{extends 'main.html' /} #{set title:'Book | BookHunter' /}
+
+<div id="page-content">
+
+	<div class="list">
+		<img src="@{Application.image(bookItem.getImageName())}" /> 
+		<span class="list-item">Author</span> <span class="list-item">${bookItem.title}</span>
+		<span class="list-item">${bookItem.description}</span>
+	</div>
+</div>

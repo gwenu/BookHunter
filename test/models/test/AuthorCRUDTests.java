@@ -45,15 +45,4 @@ public class AuthorCRUDTests extends UnitTest {
 		assertNotNull(updatedAuthor);
 		assertEquals("update test", updatedAuthor.getInfo());
 	}
-	
-	@Test
-	public void deleteAuthor(){
-		Author authorForDelete = Author.find("byFullname", "Fifth").first();
-		assertNotNull(authorForDelete);
-		
-//		authorForDelete.delete();
-//		
-//		Author deletedAuthor = Author.find("byFullName", "Fifth").first();
-//		assertNull(deletedAuthor);
-	}
 }

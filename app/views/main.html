@@ -17,8 +17,10 @@
 			<a href="/"><img src="public/images/logo.jpg" alt="Logo"></img></a>
 			<div class="search-sections">
 				<a href="/books">&{'header_books_link'}</a> <a href="/users">&{'header_users_link'}</a>
-				#{form @Application.search()} <input type="text" name="fsearch">
-				<input type="submit" value="Submit"> &nbsp; #{/form}
+				#{form @Books.books()} 
+				<input type="text" name="searchKey">
+				<input type="submit" value="Search"> 
+				#{/form}
 
 				<div class="login">
 					<a href="/login">&{'header_login_link'}</a> <a href="/registration">&{'header_registration_link'}</a>

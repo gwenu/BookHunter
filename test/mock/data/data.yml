@@ -46,7 +46,7 @@ Book(book1):
      
 Book(book2):
       author: fifthAuthor
-      title: Title2
+      title: SearchTitle1
       description: Description2
       imageName: book2_front_page.jpeg
 

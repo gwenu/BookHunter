@@ -4,7 +4,7 @@ import play.Play;
 
 public class Constants {
 
-	public static final String imagesPath = Play.configuration.getProperty("images.home.folder.path");
-	public static final int books_per_page = Integer.parseInt(Play.configuration.getProperty("paginate.book.items.amount"));
-	public static final int users_per_page = Integer.parseInt(Play.configuration.getProperty("paginate.user.items.amount"));
+	public static final String IMAGE_PATH = Play.configuration.getProperty("images.home.folder.path");
+	public static final int BOOKS_PER_PAGE = Integer.parseInt(Play.configuration.getProperty("paginate.book.items.amount"));
+	public static final int USERS_PER_PAGE = Integer.parseInt(Play.configuration.getProperty("paginate.user.items.amount"));
 }

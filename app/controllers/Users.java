@@ -13,7 +13,7 @@ public class Users extends Controller {
 	public static void users() {
 		List<User> users = User.find("order by username").fetch();
 		ValuePaginator paginatorUsers = new ValuePaginator(users);
-		paginatorUsers.setPageSize(Constants.users_per_page);
+		paginatorUsers.setPageSize(Constants.USERS_PER_PAGE);
 		render(paginatorUsers);
 	}
 

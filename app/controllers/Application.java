@@ -24,12 +24,13 @@ public class Application extends Controller {
 		render();
 	}
 
-	public static void search() {
+	public static void search(String searchKey) {
 
+		Books.books(searchKey);
 	}
 	
 	public static void image(String imageName) {
-		File file = new File(Constants.imagesPath + imageName);
+		File file = new File(Constants.IMAGE_PATH + imageName);
 		renderBinary(file);
 	}
 }
