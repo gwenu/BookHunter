@@ -3,6 +3,7 @@
 /lib
 /test-result
 /logs
+/eclipse
 .classpath
 .gitignore
 .project
