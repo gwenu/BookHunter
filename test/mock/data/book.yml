@@ -1,0 +1,23 @@
+Author(author):
+     fullName: Fifth
+     info: InfAboutAuthor5
+
+Book(book1):
+     author: author
+     title: Title_book
+     description: Description_book
+     imageName: book1_front_page.jpeg 
+
+User(user1):
+      username: User1
+      password: pass1
+      userInf: Inf1
+      imageName: userpic1.jpg
+      readBooks: [book1]
+            
+User(user2):
+      username: User2
+      password: pass2
+      userInf: Inf2
+      imageName: userpic2.jpg
+      readBooks: [book1]
