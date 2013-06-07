@@ -15,6 +15,12 @@ footer_copyright=BookHunter 2013
 
 #Index page
 index_title=A few words about BookHunter
+index_header=BookHunter is service that allow...
+index_ui_item1=Add read books
+index_ui_item2=Forming list "should be read"
+index_ui_item3=Forming list "I have read"
+index_ui_item4=Forming list "I have"
+index_ui_item5=Forming lists by tags
 
 #Books page
 books_title=Books list
@@ -24,11 +30,22 @@ users_title=Users
 
 #Login page
 login_title=Login page
+login_label=Login
+login_label_password=Password
 login_registration_link=Registration
 login_passRecover_link=Password recover
 
 #Registration page
 registration_title=Registration
+registration_name=Name
+registration_surname=Surname
+registration_sex=Sex
+registration_login=Login
+registration_password=Password
+registration_confirm_pass=Confirm password
+
+#About page
+about_header=About BookHunter
 
 #Error message
 

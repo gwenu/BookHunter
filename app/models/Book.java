@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import org.hibernate.annotations.CascadeType;
@@ -17,6 +19,9 @@ public class Book extends Model {
 	private Author author;
 	private String description;
 	private String imageName;
+	
+	@ManyToMany(mappedBy="readBooks")
+	private List<User> users;
 
 	public Book() {
 
@@ -58,5 +63,13 @@ public class Book extends Model {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 }

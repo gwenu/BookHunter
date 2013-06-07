@@ -7,10 +7,11 @@ GET     /                                       Application.index
 GET     /about                                  Application.about
 GET     /users                                  Users.users
 GET     /posts                                  Application.posts
-GET     /registration                           Application.registration
-GET     /login                                  Application.login
+GET     /registration                           Users.registration
+GET     /login                                  Users.login
 GET     /books                                  Books.books
-GET     /book                                   Books.book
+GET     /book/{id}                              Books.book
+GET     /image                                  Application.image
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

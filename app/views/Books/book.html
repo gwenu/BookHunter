@@ -1,10 +1,21 @@
 #{extends 'main.html' /} #{set title:'Book | BookHunter' /}
 
 <div id="page-content">
-
-	<div class="list">
-		<img src="@{Application.image(bookItem.getImageName())}" /> 
-		<span class="list-item">Author</span> <span class="list-item">${bookItem.title}</span>
-		<span class="list-item">${bookItem.description}</span>
+	<div class="left-column">
+		<img src="@{Application.image(bookItem.getImageName(), true)}"/>
+	</div>
+	
+	<div class="book-info">
+		<span class="book-item">${bookItem.author.fullName}</span> 
+		<span class="book-item">${bookItem.title}</span>
+		<span class="book-item">${bookItem.description}</span>	
+		
+		<h4>Users list:</h4>
+		<div class="book-user-list">
+		#{list items:bookItem.getUsers(), as: 'user'}
+			<span class="userItem"><a href=""><img src="@{Application.image(user.imageName, false)}"></img></a></span>
+		#{/list}
+		</div>
 	</div>
 </div>
+

@@ -1,18 +1,14 @@
 package controllers;
 
-import java.util.List;
-
-import controllers.utils.Constants;
-
 import models.User;
-import play.modules.paginate.ValuePaginator;
+import play.modules.paginate.ModelPaginator;
 import play.mvc.Controller;
+import controllers.utils.Constants;
 
 public class Users extends Controller {
 
 	public static void users() {
-		List<User> users = User.find("order by username").fetch();
-		ValuePaginator paginatorUsers = new ValuePaginator(users);
+		ModelPaginator<User> paginatorUsers = new ModelPaginator(User.class).orderBy("username asc");
 		paginatorUsers.setPageSize(Constants.USERS_PER_PAGE);
 		render(paginatorUsers);
 	}

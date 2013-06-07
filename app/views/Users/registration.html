@@ -3,29 +3,24 @@
 <div id="page-content">
 	<h2>&{'registration_title'}</h2>
 	<div class="content">
-		#{form @Application.registration(), id:'registration_form'}
+		#{form @Users.registration(), id:'registration_form'}
 		<div class="registration-form">
 			<ul class="items">
-				<li class="item"><span class="caption">Name</span> <input
-					class="field" type="text" required="required" tabindex="1"
-					placeholder="name" name="first_name"></li>
-				<li class="item"><span class="caption">Surname</span> <input
-					class="field" type="text" required="required" tabindex="2"
-					placeholder="surname" name="surname"></li>
-				<li class="item"><span class="caption">Sex</span> <select
-					class="field" required="required" tabindex="3" name="sex">
+				<li class="item"><span class="caption">&{'registration_name'}</span> 
+				<input class="field" type="text" required="required" tabindex="1" placeholder="name" name="first_name"></li>
+				<li class="item"><span class="caption">&{'registration_surname'}</span> 
+				<input class="field" type="text" required="required" tabindex="2" placeholder="surname" name="surname"></li>
+				<li class="item"><span class="caption">&{'registration_sex'}</span> 
+				<select class="field" required="required" tabindex="3" name="sex">
 						<option value="m">Male</option>
 						<option value="f">Female</option>
 				</select></li>
-				<li class="item"><span class="caption">Login</span> <input
-					class="field" type="text" required="required" tabindex="4"
-					placeholder="login" name="login"></li>
-				<li class="item"><span class="caption">Password</span> <input
-					class="field" type="password" required="required" tabindex="5"
-					name="password"></li>
-				<li class="item"><span class="caption">Confirm password</span>
-					<input class="field" type="password" required="required"
-					tabindex="6" name="confirm-password"></li>
+				<li class="item"><span class="caption">&{'registration_login'}</span> 
+				<input class="field" type="text" required="required" tabindex="4" placeholder="login" name="login"></li>
+				<li class="item"><span class="caption">&{'registration_password'}</span> 
+				<input class="field" type="password" required="required" tabindex="5" name="password"></li>
+				<li class="item"><span class="caption">&{'registration_confirm_pass'}</span>
+					<input class="field" type="password" required="required" tabindex="6" name="confirm-password"></li>
 			</ul>
 			#{/form}
 		</div>

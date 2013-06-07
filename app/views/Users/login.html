@@ -3,17 +3,18 @@
 <div id="page-content">
 	<h2>&{'login_title'}</h2>
 	<div class="content">
-		#{form @Application.login(), id:'login_form'}
+		#{form @Users.login(), id:'login_form'}
 			<ul class="items">
-				<li class="item"><span class="caption">Login</span> <input
-					class="field" type="text" required="required" tabindex="1"
-					placeholder="login" name="login"></li>
-				<li class="item"><span class="caption">Password</span> <input
-					class="field" type="password" required="required" tabindex="2"
-					placeholder="password" name="password"></li>
+				<li class="item">
+				<span class="caption">&{'login_label'}</span> 
+				<input class="field" type="text" required="required" tabindex="1" placeholder="login" name="login"></li>
+				<li class="item">
+				<span class="caption">&{'login_label_password'}</span> 
+				<input class="field" type="password" required="required" tabindex="2" placeholder="password" name="password"></li>
 			</ul>
 		#{/form}
 
-		<a href="">&{'login_registration_link'}</a> <a href="">&{'login_passRecover_link'}</a>
+		<a href="">&{'login_registration_link'}</a> 
+		<a href="">&{'login_passRecover_link'}</a>
 	</div>
 </div>

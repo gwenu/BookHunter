@@ -55,23 +55,43 @@
 	float:none;
 }
 
-.list{
+.list {
     display: block;
     width: 50%;
     float: left;
     padding-bottom:25px;
 }
 
-.list img{
+.list img, .book-user-list .userItem img{
 	height: 70px;
 	width: 70px;
 	margin-right: 25px;
 	vertical-align: middle;
 	float:left;
 }
+
 .list .list-item{
 	display: table-row;
 	vertical-align: middle;
+}
+
+.left-column{
+	display: block;
+    width: 25%;
+    float: left;
+    padding-bottom:25px;
+}
+
+.book-item{
+	display: table-row;
+	vertical-align: middle;
+}
+
+.book-info .book-user-list .userItem{
+	display: block;
+    width: 10%;
+    float: left;
+    padding-bottom:25px;
 }
 
 #footer {

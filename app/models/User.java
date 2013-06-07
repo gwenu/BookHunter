@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import play.db.jpa.Model;
@@ -11,6 +13,9 @@ public class User extends Model {
 	private String password;
 	private String userInf;
 	private String imageName;
+	
+	@ManyToMany
+	private List<Book> readBooks;
 
 	public User() {
 
@@ -52,5 +57,13 @@ public class User extends Model {
 
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
+	}
+	
+	public List<Book> getReadBooks() {
+		return readBooks;
+	}
+
+	public void setReadBooks(List<Book> readBooks) {
+		this.readBooks = readBooks;
 	}
 }

@@ -1,14 +1,9 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-
 import java.io.File;
-import java.util.*;
 
+import play.mvc.Controller;
 import controllers.utils.Constants;
-
-import models.*;
 
 public class Application extends Controller {
 
@@ -20,17 +15,10 @@ public class Application extends Controller {
 		render();
 	}
 
-	public static void posts() {
-		render();
-	}
-
-	public static void search(String searchKey) {
-
-		Books.books(searchKey);
-	}
-	
-	public static void image(String imageName) {
-		File file = new File(Constants.IMAGE_PATH + imageName);
-		renderBinary(file);
+	public static void image(String imageName, boolean imageBig) {
+		File imageFile = imageBig 
+				? new File(Constants.IMAGE_PATH + "big_" + imageName) 
+		        : new File(Constants.IMAGE_PATH + imageName);
+		renderBinary(imageFile);
 	}
 }

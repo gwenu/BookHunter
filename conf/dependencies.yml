@@ -1,5 +1,5 @@
 # Application dependencies
 
 require:
-- play
-        - play -> paginate 0.14
+        - play
+        - play -> paginate head

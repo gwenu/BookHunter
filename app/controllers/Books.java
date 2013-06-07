@@ -1,45 +1,31 @@
 package controllers;
 
-import java.util.List;
-
-import controllers.utils.Constants;
+import java.io.File;
 
 import models.Book;
-import play.Play;
-import play.modules.paginate.ValuePaginator;
+import play.modules.paginate.ModelPaginator;
 import play.mvc.Controller;
+import controllers.utils.Constants;
 
 public class Books extends Controller {
 
 	public static void books(String searchKey) {
-		List<Book> booksList = null;
+		ModelPaginator<Book> paginatorBooks = null;
 		
 		if(searchKey!=null && !searchKey.isEmpty()){
-			booksList = Book.find("byTitleLike", "%"+ searchKey +"%").fetch();
+			paginatorBooks = new ModelPaginator(Book.class, "LOWER(title) LIKE '%"+ searchKey.toLowerCase() +"%'");
 		}else{
-			booksList = Book.find("order by title").fetch();
+			paginatorBooks = new ModelPaginator(Book.class).orderBy("title desc");
 		}
 		
-		ValuePaginator paginatorBooks = new ValuePaginator(booksList);
 		paginatorBooks.setPageSize(Constants.BOOKS_PER_PAGE);
-		
 		render(paginatorBooks);
 	}
 	
-	public static void book(String bookID){
-		Long bookId = Long.parseLong(bookID);
-		Book bookItem = null;
-		
-		if(bookID!=null){
-			bookItem = Book.find("byId", bookId).first();
-		}else{
-			
-		}
-		
+	public static void book(long id){
+		Book bookItem = Book.find("byId", id).first();
+
+		bookItem.getUsers().size();
 		render(bookItem);
-	}
-	
-	public static void bookSearch(){
-		
 	}
 }

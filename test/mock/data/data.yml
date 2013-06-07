@@ -1,23 +1,5 @@
 # Test data
 
-User(user1):
-      username: User1
-      password: pass1
-      userInf: Inf1
-      imageName: userpic1.jpg
-      
-User(user2):
-      username: User2
-      password: pass2
-      userInf: Inf2
-      imageName: userpic2.jpg
-      
-User(user3):
-      username: User3
-      password: pass3
-      userInf: Inf3
-      imageName: userpic3.jpg
-
 Author(first):
      fullName: First
      info: InfAboutAuthor1
@@ -47,7 +29,7 @@ Book(book1):
 Book(book2):
       author: fifthAuthor
       title: SearchTitle1
-      description: Description2
+      description: Description_search
       imageName: book2_front_page.jpeg
 
 Book(book3):
@@ -86,6 +68,36 @@ Book(book8):
       description: Description8
       imageName: book8_front_page.jpeg
  
+User(user1):
+      username: User1
+      password: pass1
+      userInf: Inf1
+      imageName: userpic1.jpg
+      readBooks: [book1, book2]
+            
+User(user2):
+      username: User2
+      password: pass2
+      userInf: Inf2
+      imageName: userpic2.jpg
+      readBooks: [book1, book2, book3, book4]
+      
+      
+User(user3):
+      username: User3
+      password: pass3
+      userInf: Inf3
+      imageName: userpic3.jpg
+      readBooks: [book1, book3, book4, book5, book6]
+      
+      
+User(user4):
+      username: User4
+      password: pass4
+      userInf: Inf4
+      imageName: userpic4.jpg
+      readBooks: [book7, book8]
+      
 Comment(comment1):
       book: book2
       user: user1
