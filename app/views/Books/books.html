@@ -9,7 +9,6 @@
 		<img src="@{Application.image(book.getImageName(), false)}" /> 
 		<span class="list-item">${book.author.fullName}</span> 
 		<span class="list-item"><a href="/book/${book.id}">${book.title}</a></span>
-		<span class="list-item">${book.description}</span>
 	</div>
 	#{/paginate.list} #{paginate.controls items:paginatorBooks /}
 </div>

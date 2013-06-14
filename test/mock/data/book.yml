@@ -6,7 +6,8 @@ Book(book1):
      author: author
      title: Title_book
      description: Description_book
-     imageName: book1_front_page.jpeg 
+     bookUrl: url_test
+     imageName: 1book_front_page.jpeg 
 
 User(user1):
       username: User1

@@ -24,49 +24,57 @@ Book(book1):
      author: second
      title: Title1
      description: Description1
-     imageName: book1_front_page.jpeg 
+     bookUrl: url1
+     imageName: 1book_front_page.jpeg 
      
 Book(book2):
       author: fifthAuthor
       title: SearchTitle1
       description: Description_search
-      imageName: book2_front_page.jpeg
+      bookUrl: url2
+      imageName: 2book_front_page.jpeg
 
 Book(book3):
      author: third
      title: Title3
      description: Description3
-     imageName: book3_front_page.jpeg 
+     bookUrl: url3
+     imageName: 3book_front_page.jpeg 
      
 Book(book4):
       author: fourAuthor
       title: Title4
       description: Description4
-      imageName: book4_front_page.jpeg
+      bookUrl: url4
+      imageName: 4book_front_page.jpeg
       
 Book(book5):
      author: second
      title: Title5
      description: Description5
-     imageName: book5_front_page.jpeg
+     bookUrl: url5
+     imageName: 5book_front_page.jpeg
      
 Book(book6):
       author: fifthAuthor
       title: Title6
       description: Description6
-      imageName: book6_front_page.jpeg
+      bookUrl: url6
+      imageName: 6book_front_page.jpeg
 
 Book(book7):
      author: third
      title: Title7
      description: Description7
-     imageName: book7_front_page.jpeg 
+     bookUrl: url7
+     imageName: 7book_front_page.jpeg 
      
 Book(book8):
       author: fourAuthor
       title: Title8
       description: Description8
-      imageName: book8_front_page.jpeg
+      bookUrl: url8
+      imageName: 8book_front_page.jpeg
  
 User(user1):
       username: User1
@@ -89,7 +97,6 @@ User(user3):
       userInf: Inf3
       imageName: userpic3.jpg
       readBooks: [book1, book3, book4, book5, book6]
-      
       
 User(user4):
       username: User4

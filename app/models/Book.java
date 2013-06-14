@@ -17,8 +17,11 @@ public class Book extends Model {
 
 	@ManyToOne
 	private Author author;
+	
+	@Column(columnDefinition="TEXT")
 	private String description;
 	private String imageName;
+	private String bookUrl;
 	
 	@ManyToMany(mappedBy="readBooks")
 	private List<User> users;
@@ -27,10 +30,12 @@ public class Book extends Model {
 
 	}
 
-	public Book(Author author, String title, String description) {
+	public Book(Author author, String title, String description, String bookUrl, String imageName) {
 		this.author = author;
 		this.title = title;
 		this.description = description;
+		this.bookUrl = bookUrl;
+		this.imageName = imageName;
 	}
 
 	public String getTitle() {
@@ -71,5 +76,13 @@ public class Book extends Model {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+	
+	public String getBookUrl() {
+		return bookUrl;
+	}
+
+	public void setBookUrl(String bookUrl) {
+		this.bookUrl = bookUrl;
 	}
 }

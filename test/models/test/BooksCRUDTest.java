@@ -24,7 +24,7 @@ public class BooksCRUDTest extends UnitTest {
 	public void createAndReadBook() {
 		Fixtures.loadModels("/mock/data/data.yml");
 		Author author = new Author("TestAuthor1", "info1").save();
-		new Book(author, "BookTitle", "BookDescription").save();
+		new Book(author, "BookTitle", "BookDescription", "Bookurl", "ImageName").save();
 
 		List<Book> createdBook = Book.find("byTitle", "BookTitle").fetch();
 
@@ -33,6 +33,8 @@ public class BooksCRUDTest extends UnitTest {
 		assertEquals(author, createdBook.get(0).getAuthor());
 		assertEquals("BookTitle", createdBook.get(0).getTitle());
 		assertEquals("BookDescription", createdBook.get(0).getDescription());
+		assertEquals("Bookurl", createdBook.get(0).getBookUrl());
+		assertEquals("ImageName", createdBook.get(0).getImageName());
 	}
 
 	@Test

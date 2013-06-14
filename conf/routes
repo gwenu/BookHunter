@@ -12,6 +12,9 @@ GET     /login                                  Users.login
 GET     /books                                  Books.books
 GET     /book/{id}                              Books.book
 GET     /image                                  Application.image
+GET     /add                                    Books.add
+GET     /proxy                                  Books.proxy
+GET    /saveBook                               Books.saveBook
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

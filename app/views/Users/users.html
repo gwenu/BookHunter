@@ -6,8 +6,8 @@
 	#{paginate.list items:paginatorUsers, as:'user'}
 	<div class="list">
 		<img src="@{Application.image(user.getImageName(), false)}" /> 
-		<span class="list-item">Username: ${user.username}</span> 
-		<span class="list-item">UserInf: ${user.userInf}</span>
+		<span class="list-item">&{'user_username_lable'} ${user.username}</span> 
+		<span class="list-item">&{'user_userInf_lable'} ${user.userInf}</span>
 	</div>
 	#{/paginate.list} #{paginate.controls items:paginatorUsers /}
 </div>

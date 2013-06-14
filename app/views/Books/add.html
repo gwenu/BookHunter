@@ -1,0 +1,53 @@
+#{extends 'main.html' /} #{set title:'Books list | BookHunter' /}
+
+<link rel="stylesheet" type="text/css" media="screen"
+	href="@{'/public/stylesheets/addbook.css'}">
+
+<div id="page-content">
+	<h2>&{'book_add_title'}</h2>
+
+	<div class="add-book-container">
+		<h4>&{'book_add_site'}</h4>
+		
+		<input type="text" name="url" id="book-url" placeholder="&{'book_placeholder_add'}"></input>
+
+		<div class="hint">
+			&{'book_add_hint'} <a href="http://www.amazon.com/" target="_blank">Amazon</a>
+		</div>
+		<button id="btn-submit-url">&{'book_add_button'}</button>
+		
+	    <span id="loading" style="display: none">Loading...</span> 
+	</div>
+
+	<div class="book-preview-container">
+		<h3>&{'book_preview_title'}</h3>
+		
+		<div class="refresh_add_book">
+			<span class="refresh_add_book">&{'book_refresh_amazon_inf'}</span> 
+			<input type="image" src="public/images/refresh.jpg" id="btn_refresh_inf"></input>
+		</div>
+
+
+		<div class="right-column">
+			<img src="" id="book_img"></img>
+		</div>
+
+		#{form @Books.saveBook(), id:'add_book_form'}
+		<span class="preview-item">
+			    <label class="label" for="preview_title">&{'book_preview_book_title'}</label>
+				<input type="text" name="preview_title" id="preview_title"></input></span>
+			<span class="preview-item">
+			    <label class="label" for="preview_author">&{'book_preview_author'}</label>
+				<input type="text" name="preview_author" id="preview_author"></input></span>
+			<span class="preview-item">
+			    <label class="label" for="preview_description">&{'book_preview_description'}</label>
+				<textarea name="preview_description" id="preview_description"></textarea></span>
+			<span class="preview-item">
+			    <label class="label" for="preview_url">&{'book_preview_url'}</label>
+				<textarea name="preview_url" id="preview_url"></textarea></span> 
+			<span class="preview-item"> 
+			    <input type="text" name="preview_img_src" id="preview_img_src" style="display: none"></input></span> 
+			<input type="submit" value="&{'book_add_button'}" id="submit_add_book"></input>
+		#{/form}
+	</div>
+</div>

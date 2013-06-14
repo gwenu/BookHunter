@@ -22,11 +22,26 @@ index_ui_item3=Forming list "I have read"
 index_ui_item4=Forming list "I have"
 index_ui_item5=Forming lists by tags
 
-#Books page
+#Books/Book page
 books_title=Books list
+
+book_add_title=Add book
+book_add_site=Add book from other site
+book_placeholder_add=Enter book's link
+book_add_button=Add book
+book_add_hint=You can add from the site:
+
+book_preview_title=Preview of new book 
+book_preview_book_title=Title
+book_preview_author=Author
+book_preview_description=Description
+book_preview_url=URL
+book_refresh_amazon_inf=* if something goes wrong, please click refresh button.
 
 #Users page
 users_title=Users
+user_username_lable=Username:
+user_userInf_lable=UserInf:
 
 #Login page
 login_title=Login page

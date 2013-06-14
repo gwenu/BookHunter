@@ -1,0 +1,29 @@
+#{selenium}
+
+    // Open the page, and check that no error occured
+    open('/add')
+    waitForPageToLoad(1000)
+    assertNotTitle('Application error')
+    
+    assertTextPresent('Add book')
+    assertTextPresent('Add book from other site')
+    assertTextPresent('You can add from the site: Amazon')
+    
+    type('book-url', 'http://www.amazon.com/gp/product/0615664369/ref=s9_ri_bw_g14_ir08?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-3&pf_rd_r=069C2DFA60F1478B8AEA&pf_rd_t=101&pf_rd_p=1479963682&pf_rd_i=1')
+    click('btn-submit-url')
+    
+    waitForVisible('add_book_form')
+    assertTextPresent('Preview of new book')
+    assertValue('preview_title', 'Art of Attention: Book One')
+    assertValue('preview_author','Erica Jago')
+    assertValue('preview_description','This is an elegant yoga book designed for practice, contemplation, and creativity for students and teachers of yoga. This book is both a systematic study guide and a work of art. Detailing five of Elena's yoga classes available on YogaGlo, this book invites you to craft your own profound practices, and make your yoga your own. Explore sequencing, theming, and your interior experience; then create your own well-wrought practices.')
+    assertValue('preview_url','http://www.amazon.com/gp/product/0615664369/ref=s9_ri_bw_g14_ir08?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-3&pf_rd_r=069C2DFA60F1478B8AEA&pf_rd_t=101&pf_rd_p=1479963682&pf_rd_i=1')
+
+    click('submit_add_book')
+    waitForVisible('book-info')
+    assertTextPresent('Erica Jago')
+    assertTextPresent('Art of Attention: Book One')
+    assertTextPresent('This is an elegant yoga book designed for practice, contemplation, and creativity for students and teachers of yoga. This book is both a systematic study guide and a work of art. Detailing five of Elena's yoga classes available on YogaGlo, this book invites you to craft your own profound practices, and make your yoga your own. Explore sequencing, theming, and your interior experience; then create your own well-wrought practices.')
+    assertTextPresent('Amazon')
+    
+#{/selenium}

@@ -5,10 +5,11 @@
 		<img src="@{Application.image(bookItem.getImageName(), true)}"/>
 	</div>
 	
-	<div class="book-info">
+	<div class="book-info" id="book-info">
 		<span class="book-item">${bookItem.author.fullName}</span> 
 		<span class="book-item">${bookItem.title}</span>
 		<span class="book-item">${bookItem.description}</span>	
+		<span class="book-item"><a href="${bookItem.bookUrl}" target="_blank">Amazon</a></span>	
 		
 		<h4>Users list:</h4>
 		<div class="book-user-list">

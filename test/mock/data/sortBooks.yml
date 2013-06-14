@@ -1,0 +1,45 @@
+Author(author1):
+     fullName: Author1
+     info: InfAboutAuthor1
+
+Book(book1):
+     author: author1
+     title: Book_1users
+     description: Description_book
+     bookUrl: url1
+     imageName: 1book_front_page.jpeg 
+
+Book(book2):
+     author: author1
+     title: Book_2users
+     description: Description_book
+     bookUrl: url2
+     imageName: 2book_front_page.jpeg
+
+Book(book3):
+     author: author1
+     title: Book_3users
+     description: Description_book
+     bookUrl: url3
+     imageName: 3book_front_page.jpeg
+
+User(user1):
+      username: User1
+      password: pass1
+      userInf: Inf1
+      imageName: userpic1.jpg
+      readBooks: [book1]
+            
+User(user2):
+      username: User2
+      password: pass2
+      userInf: Inf2
+      imageName: userpic2.jpg
+      readBooks: [book1, book2]
+
+User(user2):
+      username: User2
+      password: pass2
+      userInf: Inf2
+      imageName: userpic2.jpg
+      readBooks: [book1, book2, book3]

@@ -1,19 +1,20 @@
 package functional;
 
 import java.io.File;
-import java.util.Iterator;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import models.Book;
 
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
 import play.modules.paginate.ModelPaginator;
-import play.modules.paginate.ValuePaginator;
 import play.mvc.Http.Response;
 import play.test.Fixtures;
 import play.test.FunctionalTest;
-import play.test.UnitTest;
+import controllers.utils.Constants;
 
 public class BooksTest extends FunctionalTest {
 
@@ -53,6 +54,8 @@ public class BooksTest extends FunctionalTest {
 		Book book = (Book) searchedBooksPaginator.get(0);
 		assertEquals("SearchTitle1", book.getTitle());
 		assertEquals("Description_search", book.getDescription());
+		assertEquals("url2", book.getBookUrl());
+		assertEquals("2book_front_page.jpeg", book.getImageName());
 		assertEquals("Fifth", book.getAuthor().getFullName());
 	}
 
@@ -78,7 +81,8 @@ public class BooksTest extends FunctionalTest {
 		assertEquals("Title_book", book.getTitle());
 		assertEquals("Description_book", book.getDescription());
 		assertEquals("Fifth", book.getAuthor().getFullName());
-		assertEquals("book1_front_page.jpeg", book.getImageName());
+		assertEquals("url_test", book.getBookUrl());
+		assertEquals("1book_front_page.jpeg", book.getImageName());
 		assertNotNull(book.getUsers());
 		assertEquals(2, book.getUsers().size());
 	}
@@ -102,4 +106,49 @@ public class BooksTest extends FunctionalTest {
 		assertEquals("Inf2", book.getUsers().get(1).getUserInf());
 		assertEquals("userpic2.jpg", book.getUsers().get(1).getImageName());
 	}
+	
+	@Test
+	public void renderHtmlByUrl(){
+		Response response = GET("/proxy?resourceLink=http://www.playframework.com/documentation/1.2.4/guide11");
+	
+		String inputStreamString = null;
+		
+		try {
+			FileInputStream fis = new FileInputStream("/home/olga/Development/Play/BookHunter/test/mock/data/proxyControllerTest.txt");
+			inputStreamString = new Scanner(fis,"UTF-8").useDelimiter("\\A").next();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+       
+		inputStreamString.equals(response.toString());
+	}
+	
+	@Test
+	public void saveAmazonBookIntoDB(){
+		Response response = GET("/saveBook?preview_title=TestTitle&preview_author=Testauthor&preview_description=TestDescription&preview_url=TestUrl&preview_img_src=http://www.playframework.com/assets/images/docs/play-framework-cookbook-cover.jpg");
+		assertStatus(302, response);
+		
+		File bookImageFile = new File(Constants.IMAGE_PATH + "1book_front_page.jpg");
+		assertTrue(bookImageFile.exists());
+	}
+
+	
+//	@Test
+//	public void sortBooksByUserCount(){
+//		Fixtures.loadModels("/mock/data/sortBooks.yml");
+//		
+//		GET("/books");
+//		
+//		ModelPaginator sortedBooksPaginator = (ModelPaginator) renderArgs("paginatorBooks");
+//		assertNotNull(sortedBooksPaginator);
+//		assertEquals(3, sortedBooksPaginator.size());
+//		
+//		Book book1 = (Book) sortedBooksPaginator.get(0);
+//		Book book2 = (Book) sortedBooksPaginator.get(1);
+//		Book book3 = (Book) sortedBooksPaginator.get(2);
+//		
+//		assertEquals("Book_3users", book1.getTitle());
+//		assertEquals("Book_2users", book2.getTitle());
+//		assertEquals("Book_1users", book3.getTitle());
+//	}
 }

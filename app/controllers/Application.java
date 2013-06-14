@@ -17,8 +17,8 @@ public class Application extends Controller {
 
 	public static void image(String imageName, boolean imageBig) {
 		File imageFile = imageBig 
-				? new File(Constants.IMAGE_PATH + "big_" + imageName) 
-		        : new File(Constants.IMAGE_PATH + imageName);
+				       ? new File(Constants.IMAGE_PATH + "big_" + imageName) 
+		               : new File(Constants.IMAGE_PATH + imageName);
 		renderBinary(imageFile);
 	}
 }
