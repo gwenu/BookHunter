@@ -3,4 +3,5 @@
 require:
         - play
         - play -> paginate head
-        - play -> cobertura head
+        - play -> cobertura-2.5
+        - play -> secure 
