@@ -3,6 +3,8 @@ package controllers;
 import models.User;
 import play.modules.paginate.ModelPaginator;
 import play.mvc.Controller;
+import play.mvc.Util;
+import play.mvc.With;
 import controllers.utils.Constants;
 
 public class Users extends Controller {
@@ -14,10 +16,6 @@ public class Users extends Controller {
 	}
 
 	public static void registration() {
-		render();
-	}
-
-	public static void login() {
 		render();
 	}
 }

@@ -6,7 +6,9 @@
 header_books_link=Books
 header_users_link=Users
 header_login_link=Log In
+header_logout_link=Log out
 header_registration_link=Registration
+header_welcome=Welcome
 
 #Footer
 footer_prPolicy_link=Private Policy
@@ -24,7 +26,9 @@ index_ui_item5=Forming lists by tags
 
 #Books/Book page
 books_title=Books list
+books_add_new=Add new book
 
+book_user_list=Users list:
 book_add_title=Add book
 book_add_site=Add book from other site
 book_placeholder_add=Enter book's link

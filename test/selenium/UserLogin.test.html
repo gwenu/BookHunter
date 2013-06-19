@@ -1,0 +1,29 @@
+#{selenium}
+
+	//Open login page
+	open('/login')
+	waitForPageToLoad(1000)
+    assertNotTitle('Application error')
+    assertTextPresent('Username:')
+    assertTextPresent('Password:')
+    assertTextPresent('Remember me')
+    
+    //Test login existing user
+    type('username','User1')
+    type('password','pass1')
+    clickAndWait('signin')
+    waitForPageToLoad(1000)
+    assertTextPresent('Welcome User1!')
+    assertTextPresent('A few words about BookHunter')
+    
+    open('/login')
+	waitForPageToLoad(1000)
+	
+	//Test login not existing user
+    type('username','User_fail_test')
+    type('password','pass1')
+    clickAndWait('signin')
+    waitForPageToLoad(1000)
+    assertTextPresent('Oops, unknown username or password.')
+    
+#{/selenium}    

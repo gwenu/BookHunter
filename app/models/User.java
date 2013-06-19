@@ -66,4 +66,8 @@ public class User extends Model {
 	public void setReadBooks(List<Book> readBooks) {
 		this.readBooks = readBooks;
 	}
+	
+	public static User connect(String username, String password){
+		return find("byUsernameAndPassword", username, password).first();
+	}
 }

@@ -6,30 +6,36 @@
 <meta charset="${_response_encoding}">
 <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
 <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/play-pagination.css'}"> 
-#{get 'moreStyles' /}
 <link rel="shortcut icon" type="image/png" href="@{'/public/images/logo.jpg'}">
 <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 <script src="@{'/public/javascripts/jquery.add-book.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-</script>
-#{get 'moreScripts' /}
 </head>
 <body>
 	<div id="header">
 		<div class="main_menu">
-			<a href="/"><img src="public/images/logo.jpg" alt="Logo"></img></a>
+			<a href="/"><img src="/public/images/logo.jpg" alt="Logo"></img></a>
 			<div class="search-sections">
 				<a href="/books">&{'header_books_link'}</a> <a href="/users">&{'header_users_link'}</a>
-				#{form @Books.books()} 
-				<input type="text" name="searchKey">
-				<input type="submit" value="Search"> 
-				#{/form}
+				#{form @Books.books()} <input type="text" name="searchKey">
+				<input type="submit" value="Search"> #{/form}
+			</div>
 
+			#{if session != null && session.username}
+			<div class="logout">
+				<span id="welcome">&{'header_welcome'} ${session.username}!</span>
+				<a href="@{Secure.logout()}">&{'header_logout_link'}</a> 
+			#{/if} 
+			#{else}
 				<div class="login">
-					<a href="/login">&{'header_login_link'}</a> <a href="/registration">&{'header_registration_link'}</a>
+					<a href="@{Secure.login()}">&{'header_login_link'}</a> 
+					<a href="/registration">&{'header_registration_link'}</a>
 				</div>
+			#{/else}
+
 			</div>
 		</div>
 	</div>
+
 
 	#{doLayout /}
 

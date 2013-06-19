@@ -8,13 +8,12 @@ GET     /about                                  Application.about
 GET     /users                                  Users.users
 GET     /posts                                  Application.posts
 GET     /registration                           Users.registration
-GET     /login                                  Users.login
 GET     /books                                  Books.books
 GET     /book/{id}                              Books.book
 GET     /image                                  Application.image
 GET     /add                                    Books.add
 GET     /proxy                                  Books.proxy
-GET    /saveBook                               Books.saveBook
+GET     /saveBook                               Books.saveBook
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -25,3 +24,7 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+
+
+# Import Secure routes
+*       /                                       module:secure

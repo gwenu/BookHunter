@@ -7,12 +7,17 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
+import org.junit.Before;
+
 import models.Author;
 import models.Book;
+import models.User;
 import play.libs.WS;
 import play.modules.paginate.ModelPaginator;
 import play.mvc.Controller;
 import play.mvc.Util;
+import play.mvc.With;
+import controllers.Secure.Security;
 import controllers.utils.Constants;
 
 public class Books extends Controller {

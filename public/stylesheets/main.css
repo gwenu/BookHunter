@@ -12,7 +12,7 @@
 
 #header .main_menu {
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Verdana, sans-serif;
 }
 
@@ -24,7 +24,7 @@
 	float: left;
 }
 
-#header .main_menu a,form {
+#header .main_menu a,form, #welcome {
 	margin-right: 24px;
 	float: left;
 }
@@ -33,10 +33,9 @@
 	padding-top: 30px;
 }
 	
-#header .main_menu .login {
+#header .main_menu .login, #header .main_menu .logout {
 	float: right;
 	width: 20%;
-	visibility:hidden;
 }
 
 #page-content {
@@ -53,6 +52,10 @@
 #page-content .content .login-form, .registration-form{ 
 	text-align: left;
 	float:none;
+}
+
+.add_book{
+	margin-bottom: 25px
 }
 
 .list {

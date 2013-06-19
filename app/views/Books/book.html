@@ -4,18 +4,22 @@
 	<div class="left-column">
 		<img src="@{Application.image(bookItem.getImageName(), true)}"/>
 	</div>
-	
+
 	<div class="book-info" id="book-info">
-		<span class="book-item">${bookItem.author.fullName}</span> 
-		<span class="book-item">${bookItem.title}</span>
-		<span class="book-item">${bookItem.description}</span>	
-		<span class="book-item"><a href="${bookItem.bookUrl}" target="_blank">Amazon</a></span>	
-		
-		<h4>Users list:</h4>
+		<span class="book-item">${bookItem.author.fullName}</span> <span
+			class="book-item">${bookItem.title}</span> <span class="book-item">${bookItem.description}</span>
+		<span class="book-item"><a href="${bookItem.bookUrl}"
+			target="_blank">Amazon</a></span>
+
 		<div class="book-user-list">
-		#{list items:bookItem.getUsers(), as: 'user'}
-			<span class="userItem"><a href=""><img src="@{Application.image(user.imageName, false)}"></img></a></span>
-		#{/list}
+			#{if !bookItem.getUsers().isEmpty()}
+			<h4>&{'book_user_list'}</h4>
+			
+			#{list items:bookItem.getUsers(), as: 'user'} 
+			<span class="userItem">
+				<a href=""><img src="@{Application.image(user.imageName, false)}"></img></a>
+			</span>
+			#{/list} #{/if}
 		</div>
 	</div>
 </div>
