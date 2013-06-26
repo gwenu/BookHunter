@@ -3,7 +3,7 @@
 	
 	//Open login page
 	open('/login')
-	waitForPageToLoad(1000)
+	waitForVisible('login')
     assertNotTitle('Application error')
     assertTextPresent('Username:')
     assertTextPresent('Password:')
@@ -13,12 +13,12 @@
     type('username','User1')
     type('password','pass1')
     clickAndWait('signin')
-    waitForPageToLoad(1000)
-    assertTextPresent('Welcome User1!')
+    waitForVisible('page-content')
+    assertTextPresent('User1')
     assertTextPresent('A few words about BookHunter')
     
     open('/login')
-	waitForPageToLoad(1000)
+	waitForVisible('login')
 	
 	//Test login not existing user
     type('username','User_fail_test')

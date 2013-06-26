@@ -1,6 +1,5 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
-#
 
 #Header
 header_books_link=Books
@@ -28,12 +27,16 @@ index_ui_item5=Forming lists by tags
 books_title=Books list
 books_add_new=Add new book
 
+
+book_loading=Loading...
 book_user_list=Users list:
 book_add_title=Add book
 book_add_site=Add book from other site
 book_placeholder_add=Enter book's link
 book_add_button=Add book
 book_add_hint=You can add from the site:
+book_amazon_link=http://www.amazon.com/
+book_amazon_lable=Amazon
 
 book_preview_title=Preview of new book 
 book_preview_book_title=Title
@@ -59,12 +62,24 @@ registration_title=Registration
 registration_name=Name
 registration_surname=Surname
 registration_sex=Sex
-registration_login=Login
+registration_male=Male
+registration_female=Female
+registration_username=Username
 registration_password=Password
 registration_confirm_pass=Confirm password
+registration_btn=Register
+reg_placeholder_name=Name
+reg_placeholder_surname=Surname
+reg_placeholder_username=Username
+reg_placeholder_password=Password
+reg_placeholder_confirm_pwd=Confirm password
+reg_placeholder_
 
 #About page
 about_header=About BookHunter
+
+#Profile page
+profile_title=Library of
 
 #Error message
 

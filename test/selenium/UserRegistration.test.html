@@ -1,0 +1,38 @@
+#{selenium}
+	clearSession()
+	
+	//Open login page
+	open('/registration')
+	waitForVisible('registration_form')
+    assertNotTitle('Application error')
+    assertTextPresent('Registration')
+    
+    //Test form validation
+	click('submit_registration')
+	assertTextPresent('Please enter your first name')
+	assertTextPresent('Please enter your last name')
+	assertTextPresent('Please provide a username')
+	assertTextPresent('Please provide a password')
+	assertTextPresent('Please confirm the password')
+	
+	type('username','1')
+	type('password','1')
+	type('confirm_pwd','12')
+	click('submit_registration')
+	
+	assertTextPresent('Please, at least 5 characters are necessary')
+	assertTextPresent('Please, at least 4 characters are necessary')
+	assertTextPresent('Your password does not match')
+	
+	//Submit completed registration form
+	type('first_name','TestFirst1')
+	type('last_name','TestLast1')
+	type('username','test_user1')
+	type('password','pass1')
+	type('confirm_pwd','pass1')
+	click('submit_registration')
+	
+	waitForVisible('profile_link')
+	assertTextPresent('test_user1')
+	
+#{/selenium}  

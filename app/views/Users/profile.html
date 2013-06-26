@@ -1,0 +1,19 @@
+#{extends 'main.html' /} #{set title:'Profile | BookHunter' /}
+
+<div id="page-content">
+#{if session.username}
+	<div id="profile_header">
+		<div class="img">
+			<img src="@{Application.image(user.getImageName(), false)}" />
+		</div>
+
+		<div class="title_items">
+			<span class="title_item">&{'profile_title'}</span> 
+			<span class="title_item">${user.getFirstName()}</span> 
+			<span class="title_item">${user.getLastName()}</span>
+		</div>
+
+		<span class="user_inf">${user.getUserInf()}</span>
+	</div>
+#{/if}
+</div>

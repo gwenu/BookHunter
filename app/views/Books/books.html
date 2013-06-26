@@ -4,9 +4,10 @@
 <div id="page-content">
 	<h2>&{'books_title'}</h2>
 
-	#{if session != null && session.username}
+	#{if session.username}
 	<div class="add_book">
-		<a href="/add"><button type="button">&{'books_add_new'}</button></a>
+		<a href="@{Books.add()}">
+		<button type="button">&{'books_add_new'}</button></a>
 	</div>
 	#{/if} 
 	

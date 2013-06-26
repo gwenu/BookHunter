@@ -11,6 +11,8 @@ public class User extends Model {
 
 	private String username;
 	private String password;
+	private String firstName;
+	private String lastName;
 	private String userInf;
 	private String imageName;
 	
@@ -21,10 +23,13 @@ public class User extends Model {
 
 	}
 
-	public User(String username, String password, String userInf) {
+	public User(String username, String password, String firstName, String lastName, String userInf, String imageName) {
 		this.username = username;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.userInf = userInf;
+		this.imageName = imageName;
 	}
 
 	public String getUsername() {
@@ -41,6 +46,22 @@ public class User extends Model {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getUserInf() {

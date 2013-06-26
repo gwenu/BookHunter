@@ -12,11 +12,15 @@ import org.junit.Before;
 import models.Author;
 import models.Book;
 import models.User;
+import play.jobs.Job;
+import play.libs.F;
 import play.libs.WS;
+import play.libs.WS.HttpResponse;
 import play.modules.paginate.ModelPaginator;
 import play.mvc.Controller;
 import play.mvc.Util;
 import play.mvc.With;
+import play.mvc.results.Result;
 import controllers.Secure.Security;
 import controllers.utils.Constants;
 
@@ -46,8 +50,16 @@ public class Books extends Controller {
 		render();
 	}
 
-	public static void proxy(String resourceLink) {
-		String result = WS.url(resourceLink).get().getString();
+	public static void proxy(final String resourceLink) {
+		String result = null;
+
+		if (resourceLink.startsWith(Constants.ALLOWED_DOMAIN)) {
+			result = WS.url(resourceLink).get().getString();
+		} 
+		else {
+			error(404, "ResourceLink is not from allowed domain");
+		}
+		
 		renderHtml(result);
 	}
 
@@ -56,7 +68,7 @@ public class Books extends Controller {
 		Book newBook = new Book(author, preview_title, preview_description, preview_url, null).save();
 		newBook.setImageName(newBook.getId() + "book_front_page.jpg");
 		newBook.save();
-		
+
 		saveImageFromUrl(preview_img_src, newBook.getImageName());
 
 		book(newBook.getId());

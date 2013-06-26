@@ -2,27 +2,43 @@
 
 <div id="page-content">
 	<h2>&{'registration_title'}</h2>
-	<div class="content">
-		#{form @Users.registration(), id:'registration_form'}
-		<div class="registration-form">
-			<ul class="items">
-				<li class="item"><span class="caption">&{'registration_name'}</span> 
-				<input class="field" type="text" required="required" tabindex="1" placeholder="name" name="first_name"></li>
-				<li class="item"><span class="caption">&{'registration_surname'}</span> 
-				<input class="field" type="text" required="required" tabindex="2" placeholder="surname" name="surname"></li>
-				<li class="item"><span class="caption">&{'registration_sex'}</span> 
-				<select class="field" required="required" tabindex="3" name="sex">
-						<option value="m">Male</option>
-						<option value="f">Female</option>
-				</select></li>
-				<li class="item"><span class="caption">&{'registration_login'}</span> 
-				<input class="field" type="text" required="required" tabindex="4" placeholder="login" name="login"></li>
-				<li class="item"><span class="caption">&{'registration_password'}</span> 
-				<input class="field" type="password" required="required" tabindex="5" name="password"></li>
-				<li class="item"><span class="caption">&{'registration_confirm_pass'}</span>
-					<input class="field" type="password" required="required" tabindex="6" name="confirm-password"></li>
-			</ul>
+
+	#{ifErrors}
+	<h3>Ops...</h3>
+	#{/ifErrors} 
+	
+	#{form @Users.saveUser(), id:'registration_form', enctype: 'multipart/form-data'}
+	<div class="registration-form">
+			<span class="registration-item"> 
+				<label for="first_name">&{'registration_name'}</label>
+				<input id="first_name" type="text" tabindex="1" placeholder="&{'reg_placeholder_name'}" name="first_name" value="${flash.first_name}"></input>
+				<span class="error">#{error 'first_name' /}</span>
+			</span> 
+			<span class="registration-item"> 
+				<label for="last_name">&{'registration_surname'}</label> 
+				<input id="last_name" type="text" tabindex="2" placeholder="&{'reg_placeholder_surname'}" name="last_name" value="${flash.last_name}"></input>
+			    <span class="error">#{error 'last_name' /}</span>
+			</span> 
+			<span class="registration-item"> 
+				<label for="username">&{'registration_username'}</label> 
+				<input id="username" type="text" tabindex="4" placeholder="&{'reg_placeholder_username'}" name="username" value="${flash.username}"></input>
+				<span class="error">#{error 'username' /}</span>
+			</span> 
+			<span class="registration-item"> 
+				<label for="password">&{'registration_password'}</label> 
+				<input id="password" type="password" tabindex="5" placeholder="&{'reg_placeholder_password'}" name="password" value="${flash.password}"></input>
+				<span class="error">#{error 'password' /}</span>
+			</span> 
+			<span class="registration-item"> 
+				<label for="confirm_pwd">&{'registration_confirm_pass'}</label>
+				<input id="confirm_pwd" type="password" tabindex="6" placeholder="&{'reg_placeholder_confirm_pwd'}" name="confirm_pwd" value="${flash.confirm_pwd}"></input>
+				<span class="error">#{error 'confirm_pwd' /}</span>
+			</span> 
+			<span class="registration-item">
+			  <input id="user_image" type="file" name="user_image" accept="image/*">
+			  <img id="img_preview" src="#" />
+			</span>
+			<input type="submit" value="&{'registration_btn'}" id="submit_registration"></input>
 			#{/form}
 		</div>
-	</div>
 </div>

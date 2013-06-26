@@ -13,8 +13,7 @@ import controllers.utils.Constants;
 public class Application extends Controller {
 	
 	public static void index() {
-		String user = Security.connected();
-        render(user);
+        render();
 	}
 
 	public static void about() {

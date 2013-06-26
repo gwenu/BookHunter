@@ -5,15 +5,16 @@
 # Home page
 GET     /                                       Application.index
 GET     /about                                  Application.about
-GET     /users                                  Users.users
+GET     /image                                  Application.image
 GET     /posts                                  Application.posts
-GET     /registration                           Users.registration
 GET     /books                                  Books.books
 GET     /book/{id}                              Books.book
-GET     /image                                  Application.image
 GET     /add                                    Books.add
 GET     /proxy                                  Books.proxy
 GET     /saveBook                               Books.saveBook
+GET     /users                                  Users.users
+GET     /registration                           Users.registration
+GET     /profile                                Users.profile
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

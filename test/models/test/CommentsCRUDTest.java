@@ -22,7 +22,7 @@ public class CommentsCRUDTest extends UnitTest {
 	public void createAndRetrieveUser() {
 		Author author = new Author("TestAuthor1","info1").save();
 		Book book = new Book(author, "BookTitle", "BookDescription", "", "").save();
-		User user = new User("TestUser1", "pass1", "userInf").save();
+		User user = new User("TestUser1", "pass1", "FirstName1","LastName1","userInf", "").save();
 		new Comment(book, user, "content1").save();
 
 		List<Comment> createdCommnet = Comment.find("byUser", user).fetch();

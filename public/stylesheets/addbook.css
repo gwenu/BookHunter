@@ -15,18 +15,18 @@
 	padding-bottom: 25px;
 }
 
-.preview-item {
+.preview-item, .registration-item {
 	display: table-row;
 	padding-bottom: 10px;
 }
 
-.preview-item label{
+.preview-item label, .registration-item label{
 	width:200px;
 	display: inline-block;
 	margin-bottom: 10px;
 }
 
-.preview-item input, .add-book-container input{
+.preview-item input, .add-book-container input, .registration-item input{
 	border-radius: 3px 3px 3px 3px;
 	width: 610px;
 }

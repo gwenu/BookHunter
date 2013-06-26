@@ -79,6 +79,8 @@ Book(book8):
 User(user1):
       username: User1
       password: pass1
+      firstName: Name1
+      lastName: Last1
       userInf: Inf1
       imageName: userpic1.jpg
       readBooks: [book1, book2]
@@ -86,6 +88,8 @@ User(user1):
 User(user2):
       username: User2
       password: pass2
+      firstName: Name2
+      lastName: Last2
       userInf: Inf2
       imageName: userpic2.jpg
       readBooks: [book1, book2, book3, book4]
@@ -94,6 +98,8 @@ User(user2):
 User(user3):
       username: User3
       password: pass3
+      firstName: Name3
+      lastName: Last3
       userInf: Inf3
       imageName: userpic3.jpg
       readBooks: [book1, book3, book4, book5, book6]
@@ -101,6 +107,8 @@ User(user3):
 User(user4):
       username: User4
       password: pass4
+      firstName: Name4
+      lastName: Last4
       userInf: Inf4
       imageName: userpic4.jpg
       readBooks: [book7, book8]

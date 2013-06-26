@@ -22,15 +22,17 @@ public class UsersCRUDTest extends UnitTest {
 
 	@Test
 	public void createAndRetrieveUser() {
-		new User("TestUser1", "pass1", "userInf").save();
+		new User("TestUser1", "pass1", "FirstName1","LastName1","userInf", "").save();
 
-		List<User> createdUser = User.find("byUsername", "TestUser1").fetch();
+		User createdUser = User.find("byUsername", "TestUser1").first();
 
 		assertNotNull(createdUser);
-		assertEquals(1, createdUser.size());
-		assertEquals("TestUser1", createdUser.get(0).getUsername());
-		assertEquals("pass1", createdUser.get(0).getPassword());
-		assertEquals("userInf", createdUser.get(0).getUserInf());
+		assertEquals("TestUser1", createdUser.getUsername());
+		assertEquals("pass1", createdUser.getPassword());
+		assertEquals("FirstName1", createdUser.getFirstName());
+		assertEquals("LastName1", createdUser.getLastName());
+		assertEquals("userInf", createdUser.getUserInf());
+		assertEquals("", createdUser.getImageName());
 	}
 
 	@Test

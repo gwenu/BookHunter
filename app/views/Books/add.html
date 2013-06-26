@@ -1,8 +1,5 @@
 #{extends 'main.html' /} #{set title:'Books list | BookHunter' /}
 
-<link rel="stylesheet" type="text/css" media="screen"
-	href="@{'/public/stylesheets/addbook.css'}">
-
 <div id="page-content">
 	<h2>&{'book_add_title'}</h2>
 
@@ -12,21 +9,15 @@
 		<input type="text" name="url" id="book-url" placeholder="&{'book_placeholder_add'}"></input>
 
 		<div class="hint">
-			&{'book_add_hint'} <a href="http://www.amazon.com/" target="_blank">Amazon</a>
+			&{'book_add_hint'} <a href="&{'book_amazon_link'}" target="_blank">&{'book_amazon_lable'}</a>
 		</div>
 		<button id="btn-submit-url">&{'book_add_button'}</button>
 		
-	    <span id="loading" style="display: none">Loading...</span> 
+	    <span id="loading" style="display: none">&{'book_loading'}</span> 
 	</div>
 
 	<div class="book-preview-container">
 		<h3>&{'book_preview_title'}</h3>
-		
-		<div class="refresh_add_book">
-			<span class="refresh_add_book">&{'book_refresh_amazon_inf'}</span> 
-			<input type="image" src="public/images/refresh.jpg" id="btn_refresh_inf"></input>
-		</div>
-
 
 		<div class="right-column">
 			<img src="" id="book_img"></img>

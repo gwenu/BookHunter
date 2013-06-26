@@ -1,4 +1,4 @@
-/** Main layout **/
+/* Header */
 #header {
 	text-align: center;
 	position: relative;
@@ -10,7 +10,7 @@
 	display: block;
 }
 
-#header .main_menu {
+#header .main_menu{
 	text-align: center;
 	font-size: 18px;
 	font-family: Verdana, sans-serif;
@@ -38,7 +38,8 @@
 	width: 20%;
 }
 
-#page-content {
+
+#page-content , #login{
 	text-align: left;
 	position: relative;
 	padding-bottom: 24px;
@@ -49,15 +50,11 @@
 	font-family:"Times New Roman",Times,serif;
 }
 
-#page-content .content .login-form, .registration-form{ 
-	text-align: left;
-	float:none;
-}
-
 .add_book{
 	margin-bottom: 25px
 }
 
+/*Book's and User's lists*/
 .list {
     display: block;
     width: 50%;
@@ -85,6 +82,7 @@
     padding-bottom:25px;
 }
 
+/*Book page*/
 .book-item{
 	display: table-row;
 	vertical-align: middle;
@@ -97,6 +95,35 @@
     padding-bottom:25px;
 }
 
+/* User profile */
+#profile_header {
+	padding: 20px;
+}
+
+#profile_header img{
+	margin-left: 10px;
+	margin-right: 24px;
+	width: 70px;
+	height: auto;
+	float: left;
+}
+
+.title_items{
+	font-size:25px;
+	padding:20px;
+}
+
+.user_inf{
+	float:left;
+	margin-left:100px;
+	border-color:#F5F5F5;
+	border-style:solid;
+	margin-right:25px;
+	width: 600px;
+	font-size:14px;
+}
+
+/*Footer*/
 #footer {
 	text-align: left;
 	margin: 30px 100px;
@@ -104,4 +131,5 @@
 	height: 50px;
 	display: inline-block;
 }
+
 

@@ -12,7 +12,6 @@ public class ApplicationTest extends FunctionalTest {
 	@Before
 	public void setup() {
 		Fixtures.deleteAllModels();
-		Fixtures.executeSQL("ALTER TABLE Book ALTER COLUMN id RESTART WITH 1");
 	}
 
 	@Test
