@@ -1,18 +1,4 @@
 $(document).ready(function(){
-
-$.fn.setInfToPreviewContainer = function(title, author, bookDescription, url, imageRef){
-       var strAuthor = author.split("by ");
-       var strTitle = title.split("[");
-       
-       $('input[name="preview_title"]').val($.trim(strTitle[0]));
-       $('input[name="preview_author"]').val(strAuthor[1]);
-       $("textarea#preview_description").text($.trim(bookDescription));
-       $("textarea#preview_url").text(url);
-       
-       $('#book_img').attr('src', imageRef);
-       $('#preview_img_src').val($.trim(imageRef));
-  } 
-
   $("#btn-submit-url").click(function(){
      var url = $('#book-url').val();
      
@@ -49,7 +35,18 @@ $.fn.setInfToPreviewContainer = function(title, author, bookDescription, url, im
       }
    });
   
-  
+   $.fn.setInfToPreviewContainer = function(title, author, bookDescription, url, imageRef){
+       var strAuthor = author.split("by ");
+       var strTitle = title.split("[");
+       
+       $('input[name="preview_title"]').val($.trim(strTitle[0]));
+       $('input[name="preview_author"]').val(strAuthor[1]);
+       $("textarea#preview_description").text($.trim(bookDescription));
+       $("textarea#preview_url").text(url);
+       
+       $('#book_img').attr('src', imageRef);
+       $('#preview_img_src').val($.trim(imageRef));
+   }  
 });
 
  
