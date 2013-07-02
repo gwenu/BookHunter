@@ -68,12 +68,12 @@ registration_username=Username
 registration_password=Password
 registration_confirm_pass=Confirm password
 registration_btn=Register
+registration_error=Ops... Error!
 reg_placeholder_name=Name
 reg_placeholder_surname=Surname
 reg_placeholder_username=Username
 reg_placeholder_password=Password
 reg_placeholder_confirm_pwd=Confirm password
-reg_placeholder_
 
 #About page
 about_header=About BookHunter

@@ -6,15 +6,16 @@
 GET     /                                       Application.index
 GET     /about                                  Application.about
 GET     /image                                  Application.image
-GET     /posts                                  Application.posts
 GET     /books                                  Books.books
 GET     /book/{id}                              Books.book
 GET     /add                                    Books.add
 GET     /proxy                                  Books.proxy
-GET     /saveBook                               Books.saveBook
 GET     /users                                  Users.users
-GET     /registration                           Users.registration
 GET     /profile                                Users.profile
+GET     /registration                           Users.registration
+
+POST    /saveBook                               Books.saveBook
+POST    /saveUser                               Users.saveUser
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

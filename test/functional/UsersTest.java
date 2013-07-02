@@ -1,14 +1,25 @@
 package functional;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
 import models.User;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import controllers.Secure;
+
 import play.modules.paginate.ModelPaginator;
+import play.mvc.Http.Request;
 import play.mvc.Http.Response;
+import play.mvc.Scope;
+import play.mvc.Scope.Session;
 import play.test.Fixtures;
 import play.test.FunctionalTest;
+import play.utils.Utils.Maps;
 
 public class UsersTest extends FunctionalTest {
 
@@ -40,7 +51,7 @@ public class UsersTest extends FunctionalTest {
 	}
 
 	@Test
-	public void testRenderRegistrationPage() {
+	public void renderRegistrationPage() {
 		Response response = GET("/registration");
 		assertIsOk(response);
 		assertContentType("text/html", response);
@@ -53,5 +64,43 @@ public class UsersTest extends FunctionalTest {
 		assertIsOk(response);
 		assertContentType("text/html", response);
 		assertCharset(play.Play.defaultWebEncoding, response);
+	}
+	
+	@Test
+	public void renderProfilePage() throws Throwable{
+		Fixtures.loadModels("/mock/data/userlogin.yml");
+		
+		GET("/login");
+		controllers.UserLogin.authenticate("User_login1","pass1");
+
+		Response response = GET("/profile?username=User_login1");
+		assertIsOk(response);
+		
+		User sessionUser = (User)renderArgs("user");
+		assertNotNull(sessionUser);
+		assertEquals("Name1", sessionUser.getFirstName());
+		assertEquals("Last1", sessionUser.getLastName());
+		assertEquals("User_login1", sessionUser.getUsername());
+		assertEquals("Inf1", sessionUser.getUserInf());
+		assertEquals("userpic1.jpg", sessionUser.getImageName());
+	}
+	
+	@Test
+	public void saveUserAfterRegistration(){
+		Request request = newRequest();
+		request.url = "/saveUser";
+
+		Map<String, String> paramMap = new HashMap();
+		paramMap.put("username", "test_registration");
+		paramMap.put("password", "12345");
+		paramMap.put("confirm_pwd", "12345");
+		paramMap.put("first_name", "Name_r");
+		paramMap.put("last_name", "Surname_r");
+		
+		Map<String, File> fileMap = new HashMap<String, File>();
+		fileMap.put("imageFile", new File("test/mock/data/image.jpg"));
+		
+		Response response = POST("/saveUser", paramMap, fileMap);
+		assertStatus(302, response);
 	}
 }

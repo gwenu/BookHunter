@@ -24,8 +24,8 @@ public class Users extends Controller {
 		render();
 	}
 	
-	public static void profile(){
-		User user = User.find("byUsername", session.current().get("username")).first();
+	public static void profile(String username){
+		User user = User.find("byUsername", username).first();
 		render(user);
 	}
 
@@ -44,7 +44,7 @@ public class Users extends Controller {
 	}
 	
 	@Util
-	public static void formValidation(String username, String password, String first_name, String last_name, String confirm_pwd) {
+	private static void formValidation(String username, String password, String first_name, String last_name, String confirm_pwd) {
 
 		validation.required(first_name);
 		validation.required(last_name);

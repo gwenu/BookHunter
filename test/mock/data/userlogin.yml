@@ -1,13 +1,17 @@
-User(user1):
+User(user_login1):
       username: User_login1
       password: pass1
+      firstName: Name1
+      lastName: Last1
       userInf: Inf1
       imageName: userpic1.jpg
       readBooks: []
             
-User(user2):
+User(user_login2):
       username: User_login2
       password: pass2
+      firstName: Name2
+      lastName: Last2
       userInf: Inf2
       imageName: userpic2.jpg
       readBooks: []

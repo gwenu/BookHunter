@@ -3,4 +3,7 @@
 require:
         - play
         - play -> paginate head
-        - play -> secure 
+        - play -> secure
+        - play -> guice 1.2
+        - play -> mockito 0.1
+        - commons-httpclient -> commons-httpclient 3.1

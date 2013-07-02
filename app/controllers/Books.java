@@ -6,25 +6,25 @@ import java.io.IOException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
-
-import org.junit.Before;
+import javax.inject.Inject;
 
 import models.Author;
 import models.Book;
-import models.User;
-import play.jobs.Job;
-import play.libs.F;
-import play.libs.WS;
-import play.libs.WS.HttpResponse;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+
 import play.modules.paginate.ModelPaginator;
 import play.mvc.Controller;
 import play.mvc.Util;
-import play.mvc.With;
-import play.mvc.results.Result;
-import controllers.Secure.Security;
 import controllers.utils.Constants;
 
 public class Books extends Controller {
+
+	@Inject
+	static HttpClient client;
 
 	public static void books(String searchKey) {
 		ModelPaginator<Book> paginatorBooks = null;
@@ -50,17 +50,19 @@ public class Books extends Controller {
 		render();
 	}
 
-	public static void proxy(final String resourceLink) {
-		String result = null;
+	public static void proxy(final String resourceLink) throws HttpException, IOException {
+		renderHtml(getHttpResponse(resourceLink));
+	}
+	
+	public static String getHttpResponse(String resourceLink) throws HttpException, IOException {
+		GetMethod get = new GetMethod(resourceLink);
+		int status = client.executeMethod(get);
 
-		if (resourceLink.startsWith(Constants.ALLOWED_DOMAIN)) {
-			result = WS.url(resourceLink).get().getString();
-		} 
-		else {
-			error(404, "ResourceLink is not from allowed domain");
+		if (status != HttpStatus.SC_OK) {
+			error(404, "Dump!");
 		}
-		
-		renderHtml(result);
+	
+		return get.getResponseBodyAsString();
 	}
 
 	public static void saveBook(String preview_title, String preview_author, String preview_description, String preview_url, String preview_img_src) {

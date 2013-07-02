@@ -4,7 +4,7 @@
 	<h2>&{'registration_title'}</h2>
 
 	#{ifErrors}
-	<h3>Ops...</h3>
+	<h3>&{'registration_error'}</h3>
 	#{/ifErrors} 
 	
 	#{form @Users.saveUser(), id:'registration_form', enctype: 'multipart/form-data'}

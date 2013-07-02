@@ -1,12 +1,10 @@
 package functional;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.IOException;
 
 import models.Book;
 
+import org.apache.commons.httpclient.HttpException;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,7 +13,6 @@ import play.modules.paginate.ModelPaginator;
 import play.mvc.Http.Response;
 import play.test.Fixtures;
 import play.test.FunctionalTest;
-import controllers.utils.Constants;
 
 public class BooksTest extends FunctionalTest {
 
@@ -72,7 +69,6 @@ public class BooksTest extends FunctionalTest {
 	}
 
 	@Test
-	@Ignore
 	public void renderBookPage() {
 		Fixtures.loadModels("/mock/data/book.yml");
 
@@ -110,32 +106,16 @@ public class BooksTest extends FunctionalTest {
 	}
 	
 	@Test
-	@Ignore
-	public void renderHtmlByUrl(){
-		Response response = GET("/proxy?resourceLink=http://localhost:9000/about");
-	
-		String inputStreamString = null;
-		
-		try {
-			FileInputStream fis = new FileInputStream("/test/mock/data/proxyControllerTest.txt");
-			inputStreamString = new Scanner(fis,"UTF-8").useDelimiter("\\A").next();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-       
-		inputStreamString.equals(response.toString());
+	public void saveAmazonBookIntoDB(){
+		Response response = POST("/saveBook?preview_title=TestTitle&preview_author=Testauthor&preview_description=TestDescription&preview_url=TestUrl&preview_img_src=test/mock/data/images.jpg");
+		assertStatus(302, response);
 	}
 	
 	@Test
-	@Ignore
-	public void saveAmazonBookIntoDB(){
-		Response response = GET("/saveBook?preview_title=TestTitle&preview_author=Testauthor&preview_description=TestDescription&preview_url=TestUrl&preview_img_src=http://localhost:9000/public/images/logo.jpg");
-		assertStatus(302, response);
-		
-		File bookImageFile = new File(Constants.IMAGE_PATH + "1book_front_page.jpg");
-		assertTrue(bookImageFile.exists());
+	public void renderHtmlByUrl() throws HttpException, IOException {	
+		Response response = GET("/proxy?resourceLink=test");
+		assertIsOk(response);
 	}
-
 	
 	@Test
 	@Ignore
