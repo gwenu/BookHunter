@@ -1,13 +1,14 @@
 package models.test;
 
 import java.util.List;
-import models.*;
 
-import org.junit.*;
+import models.Author;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import play.test.Fixtures;
 import play.test.UnitTest;
-import sun.security.krb5.internal.UDPClient;
 
 public class AuthorCRUDTests extends UnitTest {
 

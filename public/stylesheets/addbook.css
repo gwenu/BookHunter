@@ -15,12 +15,12 @@
 	padding-bottom: 25px;
 }
 
-.preview-item, .registration-item {
+.preview-item, .registration-item, .popup-item {
 	display: table-row;
 	padding-bottom: 10px;
 }
 
-.preview-item label, .registration-item label{
+.preview-item label, .registration-item label, .popup-item label{
 	width:200px;
 	display: inline-block;
 	margin-bottom: 10px;

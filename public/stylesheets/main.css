@@ -123,6 +123,23 @@
 	font-size:14px;
 }
 
+.add_book_to_list{
+	float:right;
+	margin-right: 200px;
+}
+
+.add_list_popup {
+  background-color:#FFFFFF;
+  border:1px solid #999999;
+  display:none;
+  margin-top: 25px;
+  margin-right:-80px;
+  text-align:left;
+  width:400px;
+  padding: 25px 25px 20px;
+  float:right;
+}
+
 /*Footer*/
 #footer {
 	text-align: left;

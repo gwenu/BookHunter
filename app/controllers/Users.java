@@ -73,6 +73,10 @@ public class Users extends Controller {
 			registration();
 		}
 	}
+	
+	public static void addToUserList(){
+		
+	}
 
 	@Util
 	private static boolean isCharactersOrDigits(String strValue) {

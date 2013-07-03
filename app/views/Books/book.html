@@ -1,10 +1,38 @@
 #{extends 'main.html' /} #{set title:'Book | BookHunter' /}
 
+<script type="text/javascript" src="@{'/public/javascripts/userlist.js'}" charset="${_response_encoding}"></script>
+
 <div id="page-content">
 	<div class="left-column">
 		<img src="@{Application.image(bookItem.getImageName(), true)}"/>
 	</div>
 
+	#{if session.username}
+	<div class="add_book_to_list">
+		<button type="button" id="btn_add_to_list">&{'book_add_list'}</button>
+	</div>
+	
+	<div class="add_list_popup">
+	#{form @Users.addToUserList(), id: 'add_user_list'}
+	<span class="popup-item">
+		<label for="user_list_note">&{'book_popup_note'}</label>
+		<textarea name="user_list_note" id="user_list_note"></textarea>
+	</span>
+	<span class="popup-item"> 
+	<label for="select_user-list">&{'book_popup_select_title'}</label>
+		<select id="select_user-list">
+			<option value="select1">&{'book_popup_select1'}</option>
+			<option value="select2">&{'book_popup_select2'}</option>
+		</select>
+	</span>
+	<button type="button" id="add_to_list">&{'book_popup_btn_add'}</button>
+	<button type="button" id="cancel_add">&{'book_popup_btn_cancel'}</button>
+	
+	#{/form}
+	</div>
+	
+	#{/if}
+	
 	<div class="book-info" id="book-info">
 		<span class="book-item">${bookItem.author.fullName}</span> 
 		<span class="book-item">${bookItem.title}</span> 

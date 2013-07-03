@@ -35,6 +35,7 @@ book_add_site=Add book from other site
 book_placeholder_add=Enter book's link
 book_add_button=Add book
 book_add_hint=You can add from the site:
+book_add_list=Add to List
 book_amazon_link=http://www.amazon.com/
 book_amazon_lable=Amazon
 
@@ -44,6 +45,13 @@ book_preview_author=Author
 book_preview_description=Description
 book_preview_url=URL
 book_refresh_amazon_inf=* if something goes wrong, please click refresh button.
+
+book_popup_note=Note:
+book_popup_select_title=List:
+book_popup_select1=Already Read
+book_popup_select2=Going To Read
+book_popup_btn_add=Add
+book_popup_btn_cancel=Cancel
 
 #Users page
 users_title=Users
@@ -80,6 +88,8 @@ about_header=About BookHunter
 
 #Profile page
 profile_title=Library of
+profile_already_read=Already Read
+profile_going_read=Going To Read
 
 #Error message
 
