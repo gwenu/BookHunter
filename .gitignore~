@@ -1,6 +1,5 @@
 /tmp
 /modules
-/lib
 /test-result
 /logs
 /eclipse
@@ -8,4 +7,5 @@
 .gitignore
 .project
 .settings
+.log
 
