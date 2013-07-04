@@ -43,6 +43,10 @@ public class Users extends Controller {
 	    }
 	}
 	
+	public static void addBookToUserList(){
+		
+	}
+	
 	@Util
 	private static void formValidation(String username, String password, String first_name, String last_name, String confirm_pwd) {
 
@@ -72,10 +76,6 @@ public class Users extends Controller {
 			}
 			registration();
 		}
-	}
-	
-	public static void addToUserList(){
-		
 	}
 
 	@Util
