@@ -16,6 +16,7 @@ GET     /registration                           Users.registration
 
 POST    /saveBook                               Books.saveBook
 POST    /saveUser                               Users.saveUser
+POST    /addBookToUserList                      Books.addBookToUserList
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

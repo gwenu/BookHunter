@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import models.Book;
 import models.User;
 import play.data.validation.Error;
 import play.libs.Files;
@@ -26,6 +27,7 @@ public class Users extends Controller {
 	
 	public static void profile(String username){
 		User user = User.find("byUsername", username).first();
+		user.getReadBooks().size();
 		render(user);
 	}
 
@@ -43,13 +45,8 @@ public class Users extends Controller {
 	    }
 	}
 	
-	public static void addBookToUserList(){
-		
-	}
-	
 	@Util
 	private static void formValidation(String username, String password, String first_name, String last_name, String confirm_pwd) {
-
 		validation.required(first_name);
 		validation.required(last_name);
 		validation.required(username);

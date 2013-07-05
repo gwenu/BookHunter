@@ -11,13 +11,20 @@ $(function() {
         } else {
             $(this).addClass("selected");
             $(".add_list_popup").slideFadeToggle(function() { 
-                $("#user_list_note").focus();
+                $("#select_user-list").focus();
             });
         }
         return false;
     });
     
     $("#add_to_list").live('click', function() {
+        $("#add_user_list").submit();
+    
+        deselect();
+        return false;
+    });
+    
+    $("#cancel_add").live('click', function() {
         deselect();
         return false;
     });
@@ -26,3 +33,5 @@ $(function() {
 $.fn.slideFadeToggle = function(easing, callback) {
     return this.animate({ opacity: 'toggle', height: 'toggle' }, "fast", easing, callback);
 };
+
+

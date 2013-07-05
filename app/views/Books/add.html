@@ -1,4 +1,8 @@
-#{extends 'main.html' /} #{set title:'Books list | BookHunter' /}
+#{extends 'main.html' /} 
+#{set title:'Books list | BookHunter' /}
+#{set 'moreScripts'}
+   #{script 'jquery.add-book.js' /}
+#{/set}
 
 <div id="page-content">
 	<h2>&{'book_add_title'}</h2>
@@ -6,7 +10,7 @@
 	<div class="add-book-container">
 		<h4>&{'book_add_site'}</h4>
 		
-		<input type="text" name="url" id="book-url" placeholder="&{'book_placeholder_add'}" value="http://www.amazon.com/You-Dont-Know-Like-Misadventures/dp/1451626886/ref=pd_sim_b_7"></input>
+		<input type="text" name="url" id="book-url" placeholder="&{'book_placeholder_add'}"></input>
 
 		<div class="hint">
 			&{'book_add_hint'} <a href="&{'book_amazon_link'}" target="_blank">&{'book_amazon_lable'}</a>

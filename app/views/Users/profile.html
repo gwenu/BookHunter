@@ -1,4 +1,9 @@
-#{extends 'main.html' /} #{set title:'Profile | BookHunter' /}
+#{extends 'main.html' /} 
+#{set title:'Profile | BookHunter' /}
+
+#{set 'moreScripts'}
+   #{script 'jquery.profile_page.js' /}
+#{/set}
 
 <div id="page-content">
 #{if session.username}
@@ -16,9 +21,35 @@
 		<span class="user_inf">${user.getUserInf()}</span>
 	</div>
     <br>	
-	<div class="references-container">
-		<a href="">&{'profile_already_read'}</a>
-		<a href="">&{'profile_going_read'}</a>
+    
+    <div class="read_books_container">
+    #{if !user.getReadBooks().isEmpty()}
+		<h3>&{'profile_already_read'}</h3>
+			
+		#{list items:user.getReadBooks(), as: 'readBook'} 
+		<span class="bookItem">
+			<a href="@{Books.book(readBook.getId())}"><img src="@{Application.image(readBook.getImageName(), false)}"></img></a>
+		</span>
+		#{/list} 
+	#{/if}
+	</div>
+<br>
+	<div class="going_read_books_container">
+	#{if !user.getGoingToReadBooks().isEmpty()}
+	<h3>&{'profile_going_read'}</h3>
+			
+	#{list items:user.getGoingToReadBooks(), as: 'readBook'} 
+	<span class="bookItem">
+		<a href="@{Books.book(readBook.getId())}"><img src="@{Application.image(readBook.getImageName(), false)}"></img></a>
+		#{form @Books.moveBookToOtherList(readBook.getId(), session.username), id: 'move_book'}
+		#{select 'select_already_read', id:'select_already_read'}
+			#{option 'Move to'}&{'profile_select1'}#{/option}  
+			#{option 'Already Read'}&{'profile_select2'}#{/option} 
+		#{/select} 
+		#{/form}
+	</span>
+	#{/list} 
+	#{/if}
 	</div>
 #{/if}
 </div>

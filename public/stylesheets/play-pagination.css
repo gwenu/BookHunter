@@ -1,4 +1,3 @@
-#based on http: //woork.blogspot.com/2008/03/perfect-pagination-style-using-css.html
 
 div .pagination-container {
 	margin-top:20px;
@@ -10,6 +9,7 @@ ul.pagination {
 	border: 0;
 	margin: 0;
 	padding: 0;
+	display:inline-block;
 }
 
 .pagination li {

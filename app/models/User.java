@@ -15,15 +15,20 @@ public class User extends Model {
 	private String lastName;
 	private String userInf;
 	private String imageName;
-	
+
 	@ManyToMany
+	@JoinTable(name = "ReadBooks", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "readBook_id"))
 	private List<Book> readBooks;
+	@ManyToMany
+	@JoinTable(name = "GoingToReadBooks", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "going_readBook_id"))
+	private List<Book> goingToReadBooks;
 
 	public User() {
 
 	}
 
-	public User(String username, String password, String firstName, String lastName, String userInf, String imageName) {
+	public User(String username, String password, String firstName,
+			String lastName, String userInf, String imageName) {
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -47,7 +52,7 @@ public class User extends Model {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -71,7 +76,7 @@ public class User extends Model {
 	public void setUserInf(String userInf) {
 		this.userInf = userInf;
 	}
-	
+
 	public String getImageName() {
 		return imageName;
 	}
@@ -79,7 +84,7 @@ public class User extends Model {
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
 	}
-	
+
 	public List<Book> getReadBooks() {
 		return readBooks;
 	}
@@ -87,8 +92,16 @@ public class User extends Model {
 	public void setReadBooks(List<Book> readBooks) {
 		this.readBooks = readBooks;
 	}
-	
-	public static User connect(String username, String password){
+
+	public List<Book> getGoingToReadBooks() {
+		return goingToReadBooks;
+	}
+
+	public void setGoingToReadBooks(List<Book> goingToReadBooks) {
+		this.goingToReadBooks = goingToReadBooks;
+	}
+
+	public static User connect(String username, String password) {
 		return find("byUsernameAndPassword", username, password).first();
 	}
 }

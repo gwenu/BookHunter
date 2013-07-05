@@ -1,6 +1,8 @@
 package functional;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import models.Book;
 
@@ -10,6 +12,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import play.modules.paginate.ModelPaginator;
+import play.mvc.Http.Request;
 import play.mvc.Http.Response;
 import play.test.Fixtures;
 import play.test.FunctionalTest;
@@ -113,9 +116,35 @@ public class BooksTest extends FunctionalTest {
 	}
 	
 	@Test
-	public void renderHtmlByUrl() throws HttpException, IOException {	
+	public void renderHtmlByUrl() {	
 		Response response = GET("/proxy?resourceLink=test");
 		assertIsOk(response);
+	}
+	
+
+	@Test
+	public void testAddBookToUserList(){
+		Fixtures.loadModels("/mock/data/data.yml");
+		
+		Request request = newRequest();
+		request.url = "/addBookToUserList";
+		
+		Map paramsMap = new HashMap();
+		paramsMap.put("id", "1");
+		paramsMap.put("username", "User1");
+		paramsMap.put("select_user_list", "Already Read");
+		
+		Response response = POST("/addBookToUserList", paramsMap);
+		assertStatus(302, response);	
+		
+		GET("/book/1");
+
+		Book book = (Book) renderArgs("bookItem");
+		assertNotNull(book);
+		assertEquals("User1", book.getUsers().get(3).getUsername());
+		assertEquals("pass1", book.getUsers().get(0).getPassword());
+		assertEquals("Inf1", book.getUsers().get(0).getUserInf());
+		assertEquals("userpic1.jpg", book.getUsers().get(0).getImageName());
 	}
 	
 	@Test

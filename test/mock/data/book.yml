@@ -15,6 +15,7 @@ User(user1):
       userInf: Inf1
       imageName: userpic1.jpg
       readBooks: [book1]
+      goingToReadBooks:
             
 User(user2):
       username: User2
@@ -22,3 +23,4 @@ User(user2):
       userInf: Inf2
       imageName: userpic2.jpg
       readBooks: [book1]
+      goingToReadBooks:

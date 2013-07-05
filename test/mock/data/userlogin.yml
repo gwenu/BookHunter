@@ -1,3 +1,21 @@
+Author(author):
+     fullName: AuthorName
+     info: InfAboutAuthor5
+
+Book(book_profile1):
+     author: author
+     title: Title_book1
+     description: Description_book1
+     bookUrl: url_test1
+     imageName: 1book_front_page.jpeg 
+     
+Book(book_profile2):
+     author: author
+     title: Title_book2
+     description: Description_book2
+     bookUrl: url_test2
+     imageName: 2book_front_page.jpeg 
+
 User(user_login1):
       username: User_login1
       password: pass1
@@ -5,7 +23,8 @@ User(user_login1):
       lastName: Last1
       userInf: Inf1
       imageName: userpic1.jpg
-      readBooks: []
+      readBooks: [book_profile1, book_profile2]
+      goingToReadBooks:
             
 User(user_login2):
       username: User_login2
@@ -15,3 +34,5 @@ User(user_login2):
       userInf: Inf2
       imageName: userpic2.jpg
       readBooks: []
+      goingToReadBooks:
+

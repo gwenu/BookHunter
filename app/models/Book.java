@@ -25,6 +25,8 @@ public class Book extends Model {
 	
 	@ManyToMany(mappedBy="readBooks")
 	private List<User> users;
+	@ManyToMany(mappedBy="goingToReadBooks")
+	private List<User> goingToReadUsers;
 
 	public Book() {
 
@@ -77,6 +79,15 @@ public class Book extends Model {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+	
+	public List<User> getGoingToReadUsers() {
+		return goingToReadUsers;
+	}
+
+	public void setGoingToReadUsers(List<User> goingToReadUsers) {
+		this.goingToReadUsers = goingToReadUsers;
+	}
+
 	
 	public String getBookUrl() {
 		return bookUrl;

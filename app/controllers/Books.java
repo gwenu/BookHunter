@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 import models.Author;
 import models.Book;
+import models.User;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
@@ -76,6 +77,32 @@ public class Books extends Controller {
 		book(newBook.getId());
 	}
 
+	public static void addBookToUserList(long id, String username, String select_user_list){
+		User user = User.find("byUsername", username).first();
+		Book book = Book.find("byId", id).first();
+		
+		if(select_user_list.equals("Already Read")){
+            user.getReadBooks().add(book);
+		}else if(select_user_list.equals("Going To Read")){
+			user.getGoingToReadBooks().add(book);
+		}
+		
+		user.save();
+		book(id);
+	}
+	
+	public static void moveBookToOtherList(long id, String username, String select_already_read){
+			User user = User.find("byUsername", username).first();
+			Book book = Book.find("byId", id).first();
+			
+			user.getReadBooks().add(book);
+			user.getGoingToReadBooks().remove(book);
+			
+			user.save();
+		
+		Users.profile(username);
+	}
+	
 	@Util
 	private static void saveImageFromUrl(String imageUrl, String imagename) {
 		try {

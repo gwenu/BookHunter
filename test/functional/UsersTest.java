@@ -83,6 +83,17 @@ public class UsersTest extends FunctionalTest {
 		assertEquals("User_login1", sessionUser.getUsername());
 		assertEquals("Inf1", sessionUser.getUserInf());
 		assertEquals("userpic1.jpg", sessionUser.getImageName());
+		assertEquals(2, sessionUser.getReadBooks().size());
+		assertEquals("Title_book1", sessionUser.getReadBooks().get(0).getTitle());
+		assertEquals("AuthorName", sessionUser.getReadBooks().get(0).getAuthor().getFullName());
+		assertEquals("Description_book1", sessionUser.getReadBooks().get(0).getDescription());
+		assertEquals("1book_front_page.jpeg", sessionUser.getReadBooks().get(0).getImageName());
+		assertEquals("url_test1", sessionUser.getReadBooks().get(0).getBookUrl());
+		assertEquals("Title_book2", sessionUser.getReadBooks().get(1).getTitle());
+		assertEquals("AuthorName", sessionUser.getReadBooks().get(1).getAuthor().getFullName());
+		assertEquals("Description_book2", sessionUser.getReadBooks().get(1).getDescription());
+		assertEquals("2book_front_page.jpeg", sessionUser.getReadBooks().get(1).getImageName());
+		assertEquals("url_test2", sessionUser.getReadBooks().get(1).getBookUrl());
 	}
 	
 	@Test

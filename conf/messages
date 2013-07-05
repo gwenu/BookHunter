@@ -90,6 +90,8 @@ about_header=About BookHunter
 profile_title=Library of
 profile_already_read=Already Read
 profile_going_read=Going To Read
+profile_select1=Move to:
+profile_select2=Already Read
 
 #Error message
 

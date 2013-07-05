@@ -10,7 +10,7 @@
 	display: block;
 }
 
-#header .main_menu{
+#header .main_menu {
 	text-align: center;
 	font-size: 18px;
 	font-family: Verdana, sans-serif;
@@ -24,22 +24,21 @@
 	float: left;
 }
 
-#header .main_menu a,form, #welcome {
+#header .main_menu a,form,#welcome {
 	margin-right: 24px;
 	float: left;
 }
 
-#header .main_menu .search-sections{
+#header .main_menu .search-sections {
 	padding-top: 30px;
 }
-	
-#header .main_menu .login, #header .main_menu .logout {
+
+#header .main_menu .login,#header .main_menu .logout {
 	float: right;
 	width: 20%;
 }
 
-
-#page-content , #login{
+#page-content,#login {
 	text-align: left;
 	position: relative;
 	padding-bottom: 24px;
@@ -47,52 +46,52 @@
 	margin: auto;
 	width: 90%;
 	display: block;
-	font-family:"Times New Roman",Times,serif;
+	font-family: "Times New Roman", Times, serif;
 }
 
-.add_book{
+.add_book {
 	margin-bottom: 25px
 }
 
 /*Book's and User's lists*/
 .list {
-    display: block;
-    width: 50%;
-    float: left;
-    padding-bottom:25px;
+	display: block;
+	width: 50%;
+	float: left;
+	padding-bottom: 25px;
 }
 
-.list img, .book-user-list .userItem img{
+.list img,.book-user-list .userItem img {
 	height: 70px;
 	width: 70px;
 	margin-right: 25px;
 	vertical-align: middle;
-	float:left;
+	float: left;
 }
 
-.list .list-item{
+.list .list-item {
 	display: table-row;
 	vertical-align: middle;
 }
 
-.left-column{
+.left-column {
 	display: block;
-    width: 25%;
-    float: left;
-    padding-bottom:25px;
+	width: 25%;
+	float: left;
+	padding-bottom: 25px;
 }
 
 /*Book page*/
-.book-item{
+.book-item {
 	display: table-row;
 	vertical-align: middle;
 }
 
-.book-info .book-user-list .userItem{
+.book-info .book-user-list .userItem {
 	display: block;
-    width: 10%;
-    float: left;
-    padding-bottom:25px;
+	width: 10%;
+	float: left;
+	padding-bottom: 25px;
 }
 
 /* User profile */
@@ -100,7 +99,7 @@
 	padding: 20px;
 }
 
-#profile_header img{
+#profile_header img {
 	margin-left: 10px;
 	margin-right: 24px;
 	width: 70px;
@@ -108,36 +107,62 @@
 	float: left;
 }
 
-.title_items{
-	font-size:25px;
-	padding:20px;
+.title_items {
+	font-size: 25px;
+	padding: 20px;
 }
 
-.user_inf{
-	float:left;
-	margin-left:100px;
-	border-color:#F5F5F5;
-	border-style:solid;
-	margin-right:25px;
+.user_inf {
+	float: left;
+	margin-left: 100px;
+	border-color: #F5F5F5;
+	border-style: solid;
+	margin-right: 25px;
 	width: 600px;
-	font-size:14px;
+	font-size: 14px;
 }
 
-.add_book_to_list{
-	float:right;
+.add_book_to_list {
+	float: right;
 	margin-right: 200px;
 }
 
 .add_list_popup {
-  background-color:#FFFFFF;
-  border:1px solid #999999;
-  display:none;
-  margin-top: 25px;
-  margin-right:-80px;
-  text-align:left;
-  width:400px;
-  padding: 25px 25px 20px;
-  float:right;
+	background-color: #FFFFFF;
+	border: 1px solid #999999;
+	display: none;
+	margin-top: 25px;
+	margin-right: -80px;
+	text-align: left;
+	width: 400px;
+	padding: 25px 25px 20px;
+	float: right;
+}
+
+.read_books_container,.going_read_books_container {
+	display: table-row;
+}
+
+.bookItem {
+	margin: 5px;
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+
+.bookItem select {
+	display: inline; 
+	text-align : center;
+	font-weight: normal;
+	width: 80px;
+	margin: 5px;
+}
+
+.bookItem img {
+	height: 80px;
+	width: 80px;
+	display: block;
+    margin: auto;
 }
 
 /*Footer*/
@@ -150,3 +175,67 @@
 }
 
 
+.book-preview-container { 	
+	display: none;
+	
+}
+
+.book-preview-container img {
+	height: 250px;
+	width: auto;
+}
+
+.right-column {
+	display: block;
+	width: 25%;
+	float: right;
+	padding-bottom: 25px;
+}
+
+.preview-item, .registration-item, .popup-item {
+	display: table-row;
+	padding-bottom: 10px;
+}
+
+.preview-item label, .registration-item label, .popup-item label{
+	width:200px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.preview-item input, .add-book-container input, .registration-item input{
+	border-radius: 3px 3px 3px 3px;
+	width: 610px;
+}
+
+.preview-item textarea {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    padding: 6px;
+    vertical-align: middle;
+	overflow: auto;
+	width: 600px;
+	height: 120px;
+	margin-bottom: 10px;
+}
+
+.refresh_add_book{
+	display: none;
+	margin-bottom: 20px;
+}
+
+.refresh_add_book{
+	font-size: 12px;
+}
+
+#btn_refresh_inf{
+	width: 20px;
+	height: 20px;
+}
+
+#loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
