@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import models.Book;
 import models.User;
 import play.data.validation.Error;
 import play.libs.Files;
@@ -55,8 +54,7 @@ public class Users extends Controller {
 		validation.equals(confirm_pwd, password);
 
 		if (isCharactersOrDigits(username)) {
-			validation.addError("username",
-					"Please use only characters and digits!");
+			validation.addError("username", "Please use only characters and digits!");
 		}
 
 		if (User.find("byUsername", username).first() != null) {

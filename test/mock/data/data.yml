@@ -115,28 +115,3 @@ User(user4):
       imageName: userpic4.jpg
       readBooks: [book7, book8]
       goingToReadBooks: []
-      
-Comment(comment1):
-      book: book2
-      user: user1
-      date: 2013-05-29
-      content: comment 1 book 2
-                  
-Comment(comment2):
-      book: book2
-      user: user1
-      date: 2013-05-30
-      content: comment 2 book 2
-      
-Comment(comment3):
-      book: book2
-      user: user1
-      date: 2013-05-29
-      content: comment 3 book 2
-                  
-Comment(comment4):
-      book: book2
-      user: user1
-      date: 2013-05-30
-      content: comment 4 book 2
-      

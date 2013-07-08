@@ -2,12 +2,11 @@ package models;
 
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
-import org.hibernate.annotations.CascadeType;
-import org.hibernate.type.LobType;
-
-import play.db.jpa.Blob;
 import play.db.jpa.Model;
 
 @Entity

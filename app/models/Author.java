@@ -1,7 +1,5 @@
 package models;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 
 import play.db.jpa.Model;

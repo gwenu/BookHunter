@@ -1,9 +1,6 @@
 package org.apache.commons.httpclient;
 
 import java.io.ByteArrayInputStream;
-import java.io.UnsupportedEncodingException;
-
-import org.apache.commons.httpclient.*;
 
 public class HttpClientMock extends HttpClient {
 

@@ -1,16 +1,13 @@
 package guice;
 
-import org.apache.commons.httpclient.HttpClient;
-
 import play.modules.guice.GuiceSupport;
-import com.google.inject.*;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 public class GuiceUtil extends GuiceSupport {
-	
-    protected Injector configure() {
-        return
-        Guice.createInjector(
-        		new BookHunterGuiceModule()
-        );
-     }
+
+	protected Injector configure() {
+		return Guice.createInjector(new BookHunterGuiceModule());
+	}
 }

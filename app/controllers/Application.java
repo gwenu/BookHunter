@@ -2,12 +2,7 @@ package controllers;
 
 import java.io.File;
 
-import models.User;
-
-import org.junit.Before;
-
 import play.mvc.Controller;
-import controllers.Secure.Security;
 import controllers.utils.Constants;
 
 public class Application extends Controller {
